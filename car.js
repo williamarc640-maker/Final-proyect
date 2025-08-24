@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 4, name: 'Traje Vinotinto', price: 329.400, image: 'img/carrito-traje-V.jpg' },
         { id: 5, name: 'Gorro de Caza', price: 150.000, image: 'img/carrito-gorro.jpg' },
         { id: 6, name: 'Guantes de Caza', price: 160.000, image: 'img/carrito-guantes.jpg' },
-        { id: 7, name: 'Abrigo de Cuero', price: 678.570, image: 'img/cuero.jfif' },
+        { id: 7, name: 'Abrigo de Cuero', price: 678.570, image: 'img/carrito-cuero.png' },
         { id: 8, name: 'Chaleco de Caza', price: 215.300, image: 'img/carrito-chaleco.jpg' },
     ];
 
