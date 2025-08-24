@@ -5,16 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCount = document.getElementById('cart-count');
     const checkoutBtn = document.getElementById('checkout-btn');
     const notification = document.getElementById('notification');
-
+// productos disponibles, detalles y sus imagenes
     const products = [
-        { id: 1, name: 'Traje Morado', price: 358.654, image: 'img/morado.avif' },
-        { id: 2, name: 'Traje Azul', price: 299.900, image: 'img/saco.webp' },
-        { id: 3, name: 'Traje Negro', price: 406.850, image: 'img/negro.webp' },
-        { id: 4, name: 'Traje Vinotinto', price: 329.400, image: 'img/Vinotinto.jpg' },
-        { id: 5, name: 'Gorro de Caza', price: 150.000, image: 'img/gorro.jpg' },
-        { id: 6, name: 'Guantes de Caza', price: 160.000, image: 'img/guantes.jpg' },
+        { id: 1, name: 'Traje Morado', price: 358.654, image: 'img/carrito-traje-M.avif' },
+        { id: 2, name: 'Traje Azul', price: 299.900, image: 'img/carrito-traje-A.webp' },
+        { id: 3, name: 'Traje Negro', price: 406.850, image: 'img/carrito-traje-N.webp' },
+        { id: 4, name: 'Traje Vinotinto', price: 329.400, image: 'img/carrito-traje-V.jpg' },
+        { id: 5, name: 'Gorro de Caza', price: 150.000, image: 'img/carrito-gorro.jpg' },
+        { id: 6, name: 'Guantes de Caza', price: 160.000, image: 'img/carrito-guantes.jpg' },
         { id: 7, name: 'Abrigo de Cuero', price: 678.570, image: 'img/cuero.jfif' },
-        { id: 8, name: 'Chaleco de Caza', price: 215.300, image: 'img/chaleco.jpg' },
+        { id: 8, name: 'Chaleco de Caza', price: 215.300, image: 'img/carrito-chaleco.jpg' },
     ];
 
     let cart = [];

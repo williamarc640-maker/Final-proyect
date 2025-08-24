@@ -13,7 +13,7 @@
     <div class="perfil-usuario-header">
         <div class="perfil-usuario-portada">
             <div class="perfil-usuario-avatar">
-                <img src="img/jf2.png" alt="img-avatar">
+                <img src="img/icono-medio-FJ.PNG" alt="img-avatar">
                 <button type="button" class="boton-avatar">
                     <i class="far fa-image"></i>
                 </button>

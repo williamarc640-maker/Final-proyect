@@ -47,12 +47,12 @@
         <section id="gallery" class="content-section">
             <h2>Nuestra coleccion</h2>
             <div class="image-gallery">
-                <img src="img/jf2.png"  class="gallery-image">
-                <img src="img/jf2.png"  class="gallery-image">
-                <img src="img/jf2.png"  class="gallery-image">
-                <img src="img/jf2.png"  class="gallery-image">
-                <img src="img/jf2.png"  class="gallery-image">
-                <img src="img/jf2.png"  class="gallery-image">
+                <img src="img/icono-medio-FJ.PNG"  class="gallery-image">
+                <img src="img/icono-medio-FJ.PNG"  class="gallery-image">
+                <img src="img/icono-medio-FJ.PNG"  class="gallery-image">
+                <img src="img/icono-medio-FJ.PNG"  class="gallery-image">
+                <img src="img/icono-medio-FJ.PNG"  class="gallery-image">
+                <img src="img/icono-medio-FJ.PNG"  class="gallery-image">
             </div>
         </section>
     </main>

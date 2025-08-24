@@ -57,17 +57,17 @@
             <h2>nuestro catalogo</h2>
             <div class="collection-slider">
                 <div class="collection-item">
-                    <center><img src="img/jf2.png"  alt="Hunting Collection"></center>
+                    <center><img src="img/icono-medio-FJ.PNG"  alt="Hunting Collection"></center>
                     <h3>coleccion de caza</h3>
                     <p>Ruge con la naturaleza y mezclate con el ambiente con nuestra coleccion de caza</p>
                 </div>
                 <div class="collection-item">
-                    <center><img src="/img/jf2.png"  alt="Formal Collection"></center>
+                    <center><img src="/img/icono-medio-FJ.PNG"  alt="Formal Collection"></center>
                     <h3>Collecion elegante</h3>
                     <p>Se la envidia de tus colegas deslumbrando nuestras telas</p>
                 </div>
                 <div class="collection-item">
-                    <center><img src="img/jf2.png" alt="Casual Collection"></center>
+                    <center><img src="img/icono-medio-FJ.PNG" alt="Casual Collection"></center>
                     <h3>Coleccion casual</h3>
                     <p>Piezas versatiles para cualquier momento y lugar</p>
                 </div>
