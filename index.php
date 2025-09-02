@@ -13,6 +13,7 @@
 <body>
     <header>
         <nav>
+            <img src="img/icono-FJ.PNG">
             <div class="logo">Function Juntion℗</div>
             <ul>
                 <li><a href="ingreso.php">inicio</a></li>

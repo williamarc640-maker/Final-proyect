@@ -1,5 +1,5 @@
 :root {
-    --color-primary: rgb(46, 46, 46);
+    --color-primary: black;
     --color-secondary: rgb(82, 82, 82);
     --color-accent: #daa520;
     --color-text: #ecf0f1;
@@ -30,11 +30,16 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between ;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+}
+nav img{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
 }
 
 .logo {
@@ -71,7 +76,7 @@ nav ul li a:hover {
 
 .hero {
     height: 100vh;
-    background-image: url('img/fondo-alargado-FJ.PNG');
+    background-image: url('img/fondo.png');
     background-size: cover;
     background-position: center;
     display: flex;
