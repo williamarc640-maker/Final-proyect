@@ -25,10 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Function Juntion℗ - Inicio de sesion</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-    <script src="ini.js"></script>
-    <link rel="stylesheet" href="ini.css">
+    <script src="archivesjs/ini.js"></script>
+    <link rel="stylesheet" href="styles/ini.css">
     <script src="script.js"></script>
 </head>
 <body>

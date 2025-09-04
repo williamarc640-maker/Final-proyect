@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Function Juntion℗</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="index.css">  
+    <script src="archivesjs/index.js"></script>
+    <link rel="stylesheet" href="styles/index.css">  
     <script src="script.js"></script>
 </head>
 <body>

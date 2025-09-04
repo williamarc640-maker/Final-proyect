@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Function Juntion℗ - catalogo</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-    <script src="car.js"></script>
-    <link rel="stylesheet" href="car.css">
+    <script src="archivesjs/car.js"></script>
+    <link rel="stylesheet" href="styles/car.css">
 </head>
 <body>
     <header>
@@ -18,7 +16,6 @@
                 <li><a href="misvis.php">¿quienes somos?</a></li>
                 <li><a href="Contacto.php">Mas de Nosotros</a></li>
                 <li><a href="ini.php">Contacto</a></li>
-                <li><a>|</a></li>
                 <li><a href="#catalog">Catalogo</a></li>
                 <li><a href="#cart" id="cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
             </ul>

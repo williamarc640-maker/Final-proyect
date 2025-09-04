@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contacto</title>
-    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="contacto.css">
+    <link rel="stylesheet" href="styles/contacto.css">
 </head>
 <body>
 <section class="seccion-perfil-usuario">
     <div class="perfil-usuario-header">
         <div class="perfil-usuario-portada">
             <div class="perfil-usuario-avatar">
-                <img src="img/icono-medio-FJ.PNG" alt="img-avatar">
+                <img src="img/icono-FJ.PNG" alt="img-avatar">
                 <button type="button" class="boton-avatar">
                     <i class="far fa-image"></i>
                 </button>
