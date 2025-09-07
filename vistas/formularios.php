@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= $usuario ? 'Editar' : 'Agregar' ?> Usuario</title>
+    <link rel="stylesheet" href="./styles/formularios.css">
 </head>
 <body>
     <h2><?= $usuario ? 'Editar' : 'Agregar' ?> Usuario</h2>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Detalle de Usuario</title>
+    <link rel="stylesheet" href="./styles/detalle.css">  
 </head>
 <body>
     <h2>Detalle de Usuario</h2>

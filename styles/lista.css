@@ -1,0 +1,81 @@
+/* Fondo general y fuente */
+body {
+    background: #f4f6f8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 30px;
+}
+
+/* Título */
+h2 {
+    color: #2d7be5;
+    margin-bottom: 20px;
+}
+
+/* Enlaces principales */
+a {
+    color: #2d7be5;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 10px;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #174ea6;
+    text-decoration: underline;
+}
+
+/* Tabla de usuarios */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+th {
+    background: #eaf1fb;
+    color: #174ea6;
+    font-weight: 600;
+    border-bottom: 2px solid #dbeafe;
+}
+
+tr:nth-child(even) {
+    background: #f7fafc;
+}
+
+tr:hover {
+    background: #e3f0ff;
+}
+
+td a {
+    margin-right: 8px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: #eaf1fb;
+    color: #174ea6;
+    font-size: 0.95em;
+    transition: background 0.2s, color 0.2s;
+}
+
+td a:hover {
+    background: #2d7be5;
+    color: #fff;
+}
+
+p {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    display: inline-block;
+}

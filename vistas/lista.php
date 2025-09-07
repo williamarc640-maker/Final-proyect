@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Listado de usuarios</title>
+    <link rel="stylesheet" href="./styles/lista.css">
 </head>
 <body>
     <h2>Listado de usuarios</h2>
@@ -33,7 +34,7 @@
         </table>
     <?php else: ?>
         <p>No hay usuarios registrados.</p>
-    <?php endif; ?>
+    <?php endif; ?> 
 </body>
 </html>
 
