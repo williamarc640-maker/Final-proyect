@@ -1,4 +1,5 @@
 <?php
+// connection to the database
 class Database {
     public static function conectar() {
         try {

@@ -1,3 +1,4 @@
+// JavaScript Document
 document.addEventListener('DOMContentLoaded', () => {
     // menu telefono
     const menuToggle = document.querySelector('.menu-toggle');

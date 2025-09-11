@@ -1,9 +1,11 @@
+/* Reset and Base Styles */
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     text-size-adjust: 100%;
     line-height: 1.4;
 }
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +13,7 @@ html {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+/* Body Styles */
 body {
     color: #404040;
     font-family: "Arial", Segoe UI, Tahoma, sans-serifl, Helvetica Neue, Helvetica;
@@ -20,6 +23,7 @@ body {
     justify-content: center;
     height: 100vh;
 }
+/* Form Container Styles */
 .boton-neon {
     display: inline-block;
     padding: 10px 20px;
@@ -35,11 +39,13 @@ body {
     animation: efecto-texto-luz 3s ease-in infinite normal both;
     text-decoration: none;
 }
+/* Form Button Hover Effect */
 .boton-neon:hover {
     color: #38EDE8;
     text-shadow: 0 0 3px #38EDE8;
     animation: none !important;
 }
+/* Form Button Active Effect */
 .boton-neon::after,
 .boton-neon::before {
     content: '';
@@ -53,23 +59,28 @@ body {
     transition: all ease-out 200ms;
     animation: efecto-luz 3s ease-in infinite normal both;
 }
+/* Form Button Hover Effect */
 .boton-neon:hover::before,
 .boton-neon:hover::after {
     border-color: #38EDE8;
     animation: none !important;
 }
+/* Form Button Hover Blur Effect */
 .boton-neon:hover::before {
     filter: blur(4px);
 }
+/* Form Button Active Effect */
 .boton-neon:active {
     color: #165C5A;
     text-shadow: 0 0 0 #165C5A;
 }
+/* Form Button Active Border Effect */
 .boton-neon:active::before,
 .boton-neon:active::after {
     border-color: #165C5A;
     animation: none !important;
 }
+/* Form Button Active Blur Effect */
 @keyframes efecto-texto-luz {
     from, 20%, 36%, to {
         color: #165C5A;

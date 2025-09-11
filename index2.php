@@ -1,9 +1,12 @@
+<!-- index2.php -->
 <?php
+/* inicio de sesion y verificacion */
 session_start();
 if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
     exit;
 }
+/* logica del controlador */
 require_once 'usuariocontroller.php';
 $controlador = new Controlador();
 $action = $_GET['action'] ?? '';
