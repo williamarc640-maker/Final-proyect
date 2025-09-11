@@ -1,10 +1,12 @@
 <?php
+/* ini.php */
 session_start();
 $mensaje = "";
 if (isset($_SESSION['usuario'])) {
     header("Location: index2.php");
     exit;
 }
+/* manejo del formulario */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario_valido = "admin";
     $contraseña_valida = "1234";
@@ -30,9 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="styles/header-footer.css">
 </head>
 <body>
+<!-- conexion a index -->
     <div class="container">
 <?php include 'header.php'; ?>
+<!-- main -->
         <main>
+<!-- formulario de inicio de sesion -->
             <section class="auth-form">
                 <h1>Bienvenido</h1>
     <?php if ($mensaje): ?>
@@ -52,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p class="form-footer">¿No tienes cuenta? <a href="res.php">Registrate aca</a></p>
             </section>
         </main>
+<!-- footer -->
 <?php include 'footer.php'; ?>
     </div>
     <div id="notification" class="notification"></div>

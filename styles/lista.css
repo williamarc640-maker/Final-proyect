@@ -6,7 +6,6 @@ body {
     margin: 0;
     padding: 30px;
 }
-
 /* Título */
 h2 {
     color: #2d7be5;
@@ -21,7 +20,7 @@ a {
     margin-right: 10px;
     transition: color 0.2s;
 }
-
+/* Enlace principal hover */
 a:hover {
     color: #174ea6;
     text-decoration: underline;
@@ -36,27 +35,27 @@ table {
     border-radius: 8px;
     overflow: hidden;
 }
-
+/* Encabezados de tabla */
 th, td {
     padding: 12px 16px;
     text-align: left;
 }
-
+/* Estilos de encabezado de tabla */
 th {
     background: #eaf1fb;
     color: #174ea6;
     font-weight: 600;
     border-bottom: 2px solid #dbeafe;
 }
-
+/* Filas de tabla */
 tr:nth-child(even) {
     background: #f7fafc;
 }
-
+/* Fila de tabla hover */
 tr:hover {
     background: #e3f0ff;
 }
-
+/* Enlaces de acción en tabla */
 td a {
     margin-right: 8px;
     padding: 4px 10px;
@@ -66,12 +65,12 @@ td a {
     font-size: 0.95em;
     transition: background 0.2s, color 0.2s;
 }
-
+/* Enlace de acción en tabla hover */
 td a:hover {
     background: #2d7be5;
     color: #fff;
 }
-
+/* Mensaje de no hay usuarios */
 p {
     background: #fff;
     padding: 16px;

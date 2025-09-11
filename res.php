@@ -10,8 +10,10 @@
 </head>
 <body>
     <div class="container">
+<!-- header -->
 <?php include 'header.php'; ?>
         <main>
+<!-- formulario de registro -->
             <section class="auth-form">
                 <h1>Crear Cuenta</h1>
                 <form id="register-form">
@@ -36,6 +38,7 @@
                 <p class="form-footer">¿Ya Tienes Cuenta? <a href="ini.php">Inicia Sesion aca</a></p>
             </section>
         </main>
+<!-- footer -->
 <?php include 'footer.php'; ?>
     </div>
     <div id="notification" class="notification"></div>
