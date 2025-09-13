@@ -8,9 +8,11 @@
 <body>
     <h2>Detalle de Usuario</h2>
     <?php if ($usuario): ?>
-        <p><strong>ID:</strong> <?= $usuario->id ?></p>
-        <p><strong>Nombre:</strong> <?= $usuario->nombre ?></p>
-        <p><strong>Correo:</strong> <?= $usuario->correo ?></p>
+        <p><strong>ID:</strong> <?= htmlspecialchars($usuario->id) ?></p>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($usuario->nombre) ?></p>
+        <p><strong>Correo:</strong> <?= htmlspecialchars($usuario->correo) ?></p>
+        <p><strong>Contraseña:</strong> <?= htmlspecialchars($usuario->contraseña) ?></p>
+        <p><strong>Rol:</strong> <?= htmlspecialchars($usuario->rol) ?></p>
     <?php else: ?>
         <p>No se encontró el usuario.</p>
     <?php endif; ?>
