@@ -1,10 +1,12 @@
 <?php
+/* ini.php */
 session_start();
 $mensaje = "";
 if (isset($_SESSION['usuario'])) {
     header("Location: index2.php");
     exit;
 }
+/* manejo del formulario */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario_valido = "admin";
     $contraseña_valida = "1234";
@@ -27,24 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Function Juntion℗ - Inicio de sesion</title>
     <script src="archivesjs/ini.js"></script>
     <link rel="stylesheet" href="styles/ini.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles/header-footer.css">
 </head>
 <body>
+<!-- conexion a index -->
     <div class="container">
-        <header>
-            <nav>
-                <div class="logo">Function Juntion℗</div>
-                <ul>
-                    <li><a href="index.php">inicio</a></li>
-                    <li><a href="misvis.php">¿quienes somos?</a></li>
-                    <li><a href="car.php">catalogo</a></li>
-                    <li><a href="Contacto.php">Mas de Nosotros</a></li>
-                    <li><a>|</a></li>
-                    <li><a href="res.php">Registrarse</a></li>
-                </ul>
-            </nav>
-        </header>
+<?php include 'header.php'; ?>
+<!-- main -->
         <main>
+<!-- formulario de inicio de sesion -->
             <section class="auth-form">
                 <h1>Bienvenido</h1>
     <?php if ($mensaje): ?>
@@ -64,16 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p class="form-footer">¿No tienes cuenta? <a href="res.php">Registrate aca</a></p>
             </section>
         </main>
-        <footer>
-            <div class="footer-content">
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-                <p>&copy; 2024 Function Juntion℗. All rights reserved.</p>
-            </div>
-        </footer>
+<!-- footer -->
+<?php include 'footer.php'; ?>
     </div>
     <div id="notification" class="notification"></div>
 </body>
