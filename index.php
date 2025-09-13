@@ -83,6 +83,8 @@
             </form>
         </section>
     </main>
+<!-- chatbot -->
+<?php include 'chatbot.php'; ?>
 <!-- footer -->
 <?php include 'footer.php'; ?>
 </body>
