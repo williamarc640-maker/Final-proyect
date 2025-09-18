@@ -1,10 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Listado de usuarios</title>
     <link rel="stylesheet" href="./styles/lista.css">
+    <link rel="stylesheet" href="styles/header-footer.css">
 </head>
+<!-- header -->
+<?php include './header.php'?>
 <body>
     <h2>Listado de usuarios</h2>
     <?php if ($_SESSION['rol'] === 'admin' || $_SESSION['rol'] === 'empleado'): ?>
@@ -43,6 +47,8 @@
     <?php else: ?>
         <p>No hay usuarios registrados.</p>
     <?php endif; ?> 
+<!-- footer -->
+    <?php include 'footer.php'; ?>
 </body>
 </html>
 
