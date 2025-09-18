@@ -2,7 +2,7 @@
 <header>
     <nav>
         <img src="img/icono-FJ.PNG">
-        <div class="logo">Function Juntion℗</div>
+        <div class="logo">© Function Juntion</div>
         <ul>
 <!-- enlaces de navegacion -->
             <li><a href="ingreso.php">inicio</a></li>

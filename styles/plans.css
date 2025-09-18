@@ -5,7 +5,7 @@ body {
     margin: 0;
     color: var(--color-text);
 }
-
+/* Main Container */
 .hosting-main {
     max-width: 1200px;
     margin: 0 auto;
@@ -21,18 +21,18 @@ body {
     border-radius: 12px;
     margin-bottom: 32px;
 }
-
+/* Hero Section Text */
 .hosting-hero h1 {
     font-size: 2.5rem;
     margin-bottom: 16px;
     color: var(--color-accent);
 }
-
+/* Hero Section Paragraph */
 .hosting-hero p {
     font-size: 1.2rem;
     margin-bottom: 24px;
 }
-
+/* Call to Action Button */
 .btn-cta {
     display: inline-block;
     background: var(--color-accent);
@@ -45,7 +45,7 @@ body {
     transition: background 0.2s, color 0.2s;
     border: none;
 }
-
+/* Call to Action Button Hover Effect */
 .btn-cta:hover {
     background: var(--color-primary);
     color: var(--color-accent);
@@ -59,25 +59,25 @@ body {
     padding: 32px 24px;
     margin-bottom: 32px;
 }
-
+/* Features Section Heading */
 .hosting-features h2 {
     margin-bottom: 16px;
     font-size: 1.5rem;
     color: var(--color-accent);
 }
-
+/* Features List */
 .hosting-features ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
+/* Individual Feature Item */
 .hosting-features li {
     padding: 8px 0;
     font-size: 1.1rem;
     border-bottom: 1px solid var(--color-background);
 }
-
+/* Remove border from last feature item */
 .hosting-features li:last-child {
     border-bottom: none;
 }
@@ -86,13 +86,13 @@ body {
 .hosting-plans {
     text-align: center;
 }
-
+/* Plans Section Heading */
 .hosting-plans h2 {
     margin-bottom: 24px;
     font-size: 1.7rem;
     color: var(--color-accent);
 }
-
+/* Individual Plan Card */
 .plan-card {
     display: inline-block;
     background: var(--color-card);
@@ -106,24 +106,24 @@ body {
     transition: transform 0.2s;
     color: var(--color-text);
 }
-
+/* Plan Card Hover Effect */
 .plan-card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 6px 24px rgba(218,165,32,0.18);
 }
-
+/* Plan Card Title */
 .plan-card h3 {
     font-size: 1.3rem;
     color: var(--color-accent);
     margin-bottom: 8px;
 }
-
+/* Plan Card Description */
 .plan-card p {
     font-size: 1rem;
     color: var(--color-text);
     margin-bottom: 16px;
 }
-
+/* Plan Card Price */
 .price {
     display: block;
     font-size: 2rem;
@@ -131,28 +131,28 @@ body {
     margin-bottom: 16px;
     font-weight: bold;
 }
-
+/* Plan Features List */
 .plan-card ul {
     list-style: none;
     padding: 0;
     margin-bottom: 24px;
 }
-
+/* Individual Plan Feature Item */
 .plan-card li {
     padding: 6px 0;
     font-size: 1rem;
     border-bottom: 1px solid var(--color-background);
 }
-
+/* Remove border from last plan feature item */
 .plan-card li:last-child {
     border-bottom: none;
 }
-
+/* Plan Card Call to Action Button */
 .plan-card .btn-cta {
     margin-top: 8px;
     width: 100%;
 }
-
+/* Responsive Design */
 @media (max-width: 900px) {
     .plan-card {
         width: 90%;

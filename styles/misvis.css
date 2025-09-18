@@ -75,24 +75,6 @@ main {
 .interactive-element:hover {
     background-color: var(--color-accent);
 }
-/* Image Gallery Styles */
-.image-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-}
-/*  Individual Gallery Image Styles */
-.gallery-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-/* Gallery Image Hover Effect */
-.gallery-image:hover {
-    transform: scale(1.05);
-}
 /* Profile Section Styles */
 @media (max-width: 768px) {
     nav {

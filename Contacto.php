@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contacto</title>
+    <title>© Function Juntion℗ - contacto</title>
 <!-- links -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles/contacto.css">
@@ -45,7 +45,7 @@
             <ul class="lista-datos">
                <a href="index.php"> <li>Inicio</li></a>
                 <a href="misvis.php"><li>¿quienes somos?</li></a>
-                <li><a href="car.php">catalogo</a></li>
+                <li><a href="plans.php">Planes</a></li>
             </ul>
         </div>
 <!-- redes sociales -->

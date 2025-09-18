@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function Juntion℗ - Inicio de sesion</title>
+    <title>© Function Juntion - Inicio de sesion</title>
     <script src="archivesjs/ini.js"></script>
     <link rel="stylesheet" href="styles/ini.css">
     <link rel="stylesheet" href="styles/header-footer.css">

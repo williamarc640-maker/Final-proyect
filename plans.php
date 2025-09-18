@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function Juntion℗ - catalogo</title>
+    <title>© Function Juntion℗ - planes</title>
 <!-- links -->
-    <script src="archivesjs/car.js"></script>
     <link rel="stylesheet" href="styles/plans.css">
     <link rel="stylesheet" href="styles/header-footer.css">
 </head>
@@ -37,7 +36,7 @@
 <!-- plan basico -->
             <h3>Básico</h3>
             <p>Ideal para sitios personales</p>
-            <span class="price">$2.99/mes</span>
+            <span class="price">COP 11.646/mes</span>
             <ul>
                 <li>1 sitio web</li>
                 <li>10 GB SSD</li>
@@ -49,7 +48,7 @@
 <!-- plan profesional -->
             <h3>Profesional</h3>
             <p>Para pequeñas empresas</p>
-            <span class="price">$5.99/mes</span>
+            <span class="price">COP 23.332/mes</span>
             <ul>
                 <li>10 sitios web</li>
                 <li>50 GB SSD</li>
@@ -61,7 +60,7 @@
 <!-- plan empresarial -->
             <h3>Empresarial</h3>
             <p>Máximo rendimiento</p>
-            <span class="price">$12.99/mes</span>
+            <span class="price">COP 50.599/mes</span>
             <ul>
                 <li>Sitios ilimitados</li>
                 <li>200 GB SSD</li>
@@ -71,8 +70,6 @@
         </div>
     </section>
 </main>
-
-
 <!-- footer -->
 <?php include 'footer.php'; ?>
 </body>
