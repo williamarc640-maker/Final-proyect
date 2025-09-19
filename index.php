@@ -7,6 +7,7 @@
 <!-- links -->
     <link rel="stylesheet" href="styles/index.css">  
     <link rel="stylesheet" href="styles/header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <!-- header -->
@@ -16,30 +17,30 @@
         <section id="home" class="hero">
             <h1>©Function Juntion</h1>
             <p>Nosotros Eclipsamos al Resto</p>
-            <a href="plans.php" class="cta-button">¡¡Explora Nuestros planes!!</a>
+            <a href="car.php" class="cta-button">¡¡Explora Nuestro Catalogo!!</a>
         </section>
 <!-- about us -->
         <section id="about" class="content-section">
             <h2>Acerca de Nosotros</h2>
-            <p>Somos una compañia de alojamiento web para compañias pequeñas, eligenos por: </p>
+            <p>Somos una compañia de ropa para ir de caza o vestir elegante a preferencia presentando gran comodidad y estilo al momento de ir a momentos especiales de gran importancia o tambien ir Casual</p>
 <!-- features -->
             <div class="feature-grid">
                 <div class="feature">
                     <i class="fas fa-tshirt"></i>
-                    <h3>Calidad de servicio</h3>
-                    <p>Gran calidad en servidores, seguridad para nuestros usuarios y rendimiento</p>
+                    <h3>Calidad de Materiales</h3>
+                    <p>Resistente, Comodo y para todas las ocasiones</p>
                 </div>
 <!-- feature 2 -->
                 <div class="feature">
                     <i class="fas fa-leaf"></i>
                     <h3>Exclusividad</h3>
-                    <p>Precios baratos y accequibles para toda clase de publico</p>
+                    <p>ofresemos servicios persoalizados para nuestros clientes mas fieles y recurrentes</p>
                 </div>
 <!-- feature 3 -->
                 <div class="feature">
                     <i class="fas fa-paint-brush"></i>
-                    <h3>Gran capacidad de personalizacion</h3>
-                    <p>Tenemos una gran cantidad de aspectos que puedes modificar a tu gusto</p>
+                    <h3>Diseños Unicos</h3>
+                    <p>Tenemos un estilo que nos diferencia de la competenvcia, exlusivo para salir e ir de forma casual y elegante a la misma vez</p>
                 </div>
             </div>
         </section>

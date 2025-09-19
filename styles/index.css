@@ -58,7 +58,7 @@ body {
     padding: 2rem;
     background-color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    border-radius: 5px;
 }
 /* Content Section Heading Styles */
 .content-section h2 {
@@ -83,14 +83,6 @@ body {
     font-size: 3rem;
     color: var(--color-accent);
     margin-bottom: 1rem;
-}
-/* Feature Title Styles */
-.collection-slider {
-    display: flex;
-    overflow-x: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
 }
 /* Newsletter Section Styles */
 #newsletter {
@@ -128,7 +120,7 @@ body {
 #newsletter-form button:hover {
     background-color: #ad8a1f;
 }
-/* Hosting Features Section */
+/* Responsive Navigation Menu */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
