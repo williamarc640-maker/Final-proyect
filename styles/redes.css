@@ -1,0 +1,62 @@
+.redes-section {
+    background: var(--color-background);
+    color: var(--color-text);
+    padding: 3rem 0 2rem 0;
+    text-align: center;
+}
+
+.redes-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-accent);
+    letter-spacing: 1px;
+}
+
+.redes-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.red-card {
+    background: var(--color-card);
+    color: var(--color-text);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    font-size: 1.2rem;
+    min-width: 120px;
+}
+
+.red-card i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.red-card.facebook:hover {
+    background: #3b5998;
+    color: #fff;
+}
+.red-card.instagram:hover {
+    background: #e1306c;
+    color: #fff;
+}
+.red-card.twitter:hover {
+    background: #1da1f2;
+    color: #fff;
+}
+.red-card.youtube:hover {
+    background: #ff0000;
+    color: #fff;
+}
+
+.red-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}

@@ -16,17 +16,17 @@ class Usuario {
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 /* insertar nuevo usuario */
-    public static function insertar($nombre, $correo) {
+    public static function insertar($nombre, $correo, $contraseña, $rol = 'empleado') {
         $db = Database::conectar();
-        $stmt = $db->prepare("INSERT INTO usuarios(nombre, correo) VALUES (?, ?)");
-        return $stmt->execute([$nombre, $correo]);
+        $stmt = $db->prepare("INSERT INTO usuarios(nombre, correo, contraseña, rol) VALUES (?, ?, ?, ?)");
+        return $stmt->execute([$nombre, $correo, $contraseña, $rol]);
     }
 /* actualizar usuario existente */
-    public static function actualizar($id, $nombre, $correo) {
+    public static function actualizar($id, $nombre, $correo, $contraseña, $rol) {
         $db = Database::conectar();
-        $stmt = $db->prepare("UPDATE usuarios SET nombre = ?, correo = ? WHERE id = ?");
-        return $stmt->execute([$nombre, $correo, $id]);
-    }
+        $stmt = $db->prepare("UPDATE usuarios SET nombre = ?, correo = ?, contraseña = ?, rol = ? WHERE id = ?");
+        return $stmt->execute([$nombre, $correo, $contraseña, $rol, $id]);
+}
 /* eliminar usuario */
     public static function eliminar($id) {
         $db = Database::conectar();

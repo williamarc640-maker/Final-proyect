@@ -11,6 +11,14 @@ require_once 'usuariocontroller.php';
 $controlador = new Controlador();
 $action = $_GET['action'] ?? '';
 $id = $_GET['id'] ?? null;
+if ($_SESSION['rol'] === 'cliente') {
+    if (isset($_GET['action']) && $_GET['action'] === 'actualizarCliente') {
+        $controlador->actualizarCliente($_POST);
+    } else {
+        $controlador->perfilCliente();
+    }
+    exit;
+}
 switch ($action) {
     case 'formulario':
         $controlador->formulario($id);

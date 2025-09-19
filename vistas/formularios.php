@@ -13,7 +13,17 @@
         <input type="text" name="nombre" value="<?= $usuario->nombre ?? '' ?>" required><br><br>
         <label>Correo:</label><br>
         <input type="email" name="correo" value="<?= $usuario->correo ?? '' ?>" required><br><br>
-        <button type="submit">Guardara</button>
+        <label>Contraseña:</label><br>
+        <input type="password" name="contraseña" value="<?= $usuario->contraseña ?? '' ?>" required><br><br>
+        <?php if ($_SESSION['rol'] === 'admin'): ?>
+            <label for="rol">Rol:</label>
+            <select name="rol" id="rol">
+                <option value="admin" <?= ($usuario && $usuario->rol == 'admin') ? 'selected' : '' ?>>Administrador</option>
+                <option value="empleado" <?= ($usuario && $usuario->rol == 'empleado') ? 'selected' : '' ?>>Empleado</option>
+                <option value="cliente" <?= ($usuario && $usuario->rol == 'cliente') ? 'selected' : '' ?>>Cliente</option>
+            </select><br><br>
+        <?php endif; ?>
+        <button type="submit">Guardar</button>
         <a href="index2.php">Cancelar</a>
     </form>
 </body>

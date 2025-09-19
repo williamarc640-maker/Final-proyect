@@ -1,20 +1,20 @@
 /* Fondo general y fuente */
 body {
-    background: #f4f6f8;
+    background: var(--color-background);
     font-family: 'Segoe UI', Arial, sans-serif;
-    color: #333;
+    color: var(--color-text);
     margin: 0;
-    padding: 30px;
 }
 /* Título */
 h2 {
-    color: #2d7be5;
+    color: var(--color-text);
     margin-bottom: 20px;
+    margin-top: 150px;
 }
 
 /* Enlaces principales */
 a {
-    color: #2d7be5;
+    color: var(--color-text);
     text-decoration: none;
     font-weight: 500;
     margin-right: 10px;
@@ -22,7 +22,7 @@ a {
 }
 /* Enlace principal hover */
 a:hover {
-    color: #174ea6;
+    color: var(--color-accent);
     text-decoration: underline;
 }
 
@@ -30,10 +30,11 @@ a:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    background: var(--color-secondary);
+    box-shadow: 0 2px 8px var(--color-accent);
     border-radius: 8px;
     overflow: hidden;
+    margin-bottom: 323px;
 }
 /* Encabezados de tabla */
 th, td {
@@ -42,39 +43,38 @@ th, td {
 }
 /* Estilos de encabezado de tabla */
 th {
-    background: #eaf1fb;
-    color: #174ea6;
+    background: var(--color-secondary);
+    color: var(--color-text);
     font-weight: 600;
-    border-bottom: 2px solid #dbeafe;
+    border-bottom: 2px solid var(--color-accent);
 }
 /* Filas de tabla */
 tr:nth-child(even) {
-    background: #f7fafc;
+    background: var(--color-card);
 }
 /* Fila de tabla hover */
 tr:hover {
-    background: #e3f0ff;
+    background: var(--color-secundary);
 }
 /* Enlaces de acción en tabla */
 td a {
     margin-right: 8px;
     padding: 4px 10px;
     border-radius: 4px;
-    background: #eaf1fb;
-    color: #174ea6;
+    background: var(--color-accent);
+    color: var(--color-text);
     font-size: 0.95em;
     transition: background 0.2s, color 0.2s;
 }
 /* Enlace de acción en tabla hover */
 td a:hover {
-    background: #2d7be5;
-    color: #fff;
+    background: #daa520c9;
+    color: var(--color-card);
 }
 /* Mensaje de no hay usuarios */
 p {
-    background: #fff;
+    background: var(--color-primary);
     padding: 16px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
     display: inline-block;
 }

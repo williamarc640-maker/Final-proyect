@@ -7,6 +7,6 @@
                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
-            <p>&copy; 2024 Function Juntion℗. All rights reserved.</p>
+            <p>© 2024 Function Juntion℗. All rights reserved.</p>
         </div>
     </footer>
