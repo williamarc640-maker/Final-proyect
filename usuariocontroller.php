@@ -5,17 +5,17 @@ class Controlador {
 /* listar todos los usuarios */
     public function listar() {
         $usuarios = Usuario::obtenerTodo();
-        include 'vistas/lista.php';
+        include 'lista.php';
     }
 /* ver detalle de un usuario */
     public function detalle($id) {
         $usuario = Usuario::obtenerPorId($id);
-        include 'vistas/detalle.php';
+        include 'detalle.php';
     }
 /* mostrar formulario para crear o editar usuario */
     public function formulario($id = null) {
         $usuario = $id ? Usuario::obtenerPorId($id) : null;
-        include 'vistas/formularios.php';
+        include 'formularios.php';
     }
 /* guardar usuario (crear o actualizar) */
     public function guardar($dato) {
@@ -45,7 +45,7 @@ class Controlador {
 /* mostrar datos del cliente */
     public function perfilCliente() {
         $usuario = Usuario::obtenerPorId($_SESSION['id']);
-        include 'vistas/perfil_cliente.php';
+        include 'perfil_cliente.php';
     }
 /* actualizar datos del cliente */
     public function actualizarCliente($dato) {

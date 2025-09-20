@@ -14,11 +14,10 @@ h2 {
     letter-spacing: 1px;
 }
 
-.form-container {
+.perfil-container {
     background: var(--color-card);
     max-width: 420px;
     margin: 32px auto;
-    margin-bottom: 153px;
     padding: 32px 40px;
     border-radius: 18px;
     box-shadow: 0 4px 18px var(--color-card);
@@ -27,17 +26,29 @@ h2 {
     gap: 19px;
 }
 
-label {
+.perfil-container p {
+    font-size: 18px;
+    margin: 0;
+    color: var(--color-text);
+    background: rgba(255,255,255,0.04);
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.perfil-container strong {
+    color: var(--color-accent);
+}
+
+.perfil-container form label {
     font-size: 16px;
     color: var(--color-accent);
     margin-bottom: 4px;
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
+.perfil-container form input[type="text"],
+.perfil-container form input[type="email"],
+.perfil-container form input[type="password"] {
     width: 100%;
     padding: 10px 12px;
     border-radius: 8px;
@@ -51,14 +62,14 @@ select {
     transition: border 0.2s;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-select:focus {
+.perfil-container form input[type="text"]:focus,
+.perfil-container form input[type="email"]:focus,
+.perfil-container form input[type="password"]:focus {
     border: 1.5px solid var(--color-accent);
 }
 
-button, .cancelar {
+.perfil-container form button,
+.perfil-container form a {
     background: var(--color-accent);
     color: var(--color-primary);
     padding: 10px 22px;
@@ -74,14 +85,43 @@ button, .cancelar {
     display: inline-block;
 }
 
-button:hover, .cancelar:hover {
+.perfil-container form button:hover,
+.perfil-container form a:hover {
     background: var(--color-primary);
     color: var(--color-accent);
 }
 
-.botones {
+.perfil-botones {
     display: flex;
     justify-content: center;
     gap: 12px;
     margin-top: 12px;
+}
+
+.perfil-editar {
+    display: block;
+    margin: 24px auto 0 auto;
+    background: var(--color-accent);
+    color: var(--color-primary);
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    text-align: center;
+    font-size: 16px;
+}
+
+.perfil-editar:hover {
+    background: var(--color-primary);
+    color: var(--color-accent);
+}
+
+.cerrar-sesion-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 162px;
 }
