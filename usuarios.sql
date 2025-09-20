@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-09-2025 a las 02:33:59
+-- Tiempo de generación: 21-09-2025 a las 01:53:55
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -29,22 +29,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `correo` varchar(255) NOT NULL,
-  `clave` varchar(255) NOT NULL
+  `nombre` varchar(100) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `contraseña` varchar(100) NOT NULL,
+  `rol` varchar(20) NOT NULL DEFAULT 'empleado'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `clave`) VALUES
-(1, 'lestat sebasthian raquira rodriguez', 'les@gmail.com', 'luisitocomunica'),
-(2, 'juber santiago olivar gil', 'juber@gmail.com', 'marimari'),
-(5, 'william alexander romero cristancho', 'williamarc640@gmail.com', ''),
-(6, 'jhon david delgado', 'negro@gmail.com', ''),
-(7, 'samuel guillermo lopez cardenas', 'samu@gmail.com', ''),
-(9, 'maikol cardona', 'maikolC@gmail.com', '');
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contraseña`, `rol`) VALUES
+(1, 'admin', 'admin@gmail.com', '123', 'admin'),
+(2, 'empleado', 'empleado@gmail.com', '456', 'empleado'),
+(3, 'william A romero C', 'williamarc640@gmail.com', 'gatosos', 'cliente'),
+(4, 'luis perez', 'luisp@gmail.com', '789', 'cliente'),
+(5, 'lestat', 'lestat@gmail.com', 'les', 'cliente');
 
 --
 -- Índices para tablas volcadas
@@ -64,7 +64,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

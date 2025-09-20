@@ -1,4 +1,5 @@
 <?php
+require_once 'database.php';
 /* ini.php */
 session_start();
 $mensaje = "";
@@ -8,12 +9,16 @@ if (isset($_SESSION['usuario'])) {
 }
 /* manejo del formulario */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario_valido = "admin";
-    $contraseña_valida = "1234";
     $usuario = $_POST['usuario'] ?? '';
     $contraseña = $_POST['contraseña'] ?? '';
-    if ($usuario === $usuario_valido && $contraseña === $contraseña_valida) {
-        $_SESSION['usuario'] = $usuario;
+    $db = database::conectar();
+    $stmt = $db->prepare("SELECT * FROM usuarios WHERE nombre = ? AND contraseña = ?");
+    $stmt->execute([$usuario, $contraseña]);
+    $user = $stmt->fetch(PDO::FETCH_OBJ);
+    if ($user) {
+        $_SESSION['usuario'] = $user->nombre;
+        $_SESSION['rol'] = $user->rol;
+        $_SESSION['id'] = $user->id; // Guarda el ID del usuario
         header("Location: index2.php");
         exit;
     } else {
@@ -26,10 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function Juntion℗ - Inicio de sesion</title>
+    <title>© Function Juntion - Inicio de sesion</title>
     <script src="archivesjs/ini.js"></script>
     <link rel="stylesheet" href="styles/ini.css">
     <link rel="stylesheet" href="styles/header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <!-- conexion a index -->

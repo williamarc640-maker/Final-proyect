@@ -1,12 +1,31 @@
+<?php
+require_once 'database.php';
+$mensaje = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['name'] ?? '';
+    $correo = $_POST['email'] ?? '';
+    $contraseña = $_POST['password'] ?? '';
+    $confirmar = $_POST['confirm-password'] ?? '';
+    if ($contraseña !== $confirmar) {
+        $mensaje = "Las contraseñas no coinciden.";
+    } else {
+        $db = Database::conectar();
+        $stmt = $db->prepare("INSERT INTO usuarios (nombre, correo, contraseña, rol) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$nombre, $correo, $contraseña, 'empleado']);
+        $mensaje = "Usuario registrado correctamente. <a href='ini.php'>Inicia sesión aquí</a>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Hunter - Register</title>
+    <title>© Function Juntion℗ - Registro</title>
     <script src="archivesjs/ini.js"></script>
     <link rel="stylesheet" href="styles/ini.css">
     <link rel="stylesheet" href="styles/header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -16,7 +35,7 @@
 <!-- formulario de registro -->
             <section class="auth-form">
                 <h1>Crear Cuenta</h1>
-                <form id="register-form">
+                <form id="register-form" method="post">
                     <div class="form-group">
                         <label for="name">Nombre Completo</label>
                         <input type="text" id="name" name="name" required>
@@ -36,6 +55,9 @@
                     <button type="submit" class="btn">Registrar</button>
                 </form>
                 <p class="form-footer">¿Ya Tienes Cuenta? <a href="ini.php">Inicia Sesion aca</a></p>
+<?php if ($mensaje): ?>
+    <p style="color:green;"><?= $mensaje ?></p>
+<?php endif; ?>
             </section>
         </main>
 <!-- footer -->
