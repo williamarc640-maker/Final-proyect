@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>© Function Juntion℗ - pagina principal</title>
+    <title>© SummerWooll - pagina principal</title>
 <!-- links -->
     <link rel="stylesheet" href="styles/index.css">  
     <link rel="stylesheet" href="styles/header-footer.css">
@@ -15,7 +15,7 @@
     <main>
 <!-- hero section -->
         <section id="home" class="hero">
-            <h1>©Function Juntion</h1>
+            <h1>©SummerWooll</h1>
             <p>Nosotros Eclipsamos al Resto</p>
             <a href="car.php" class="cta-button">¡¡Explora Nuestro Catalogo!!</a>
         </section>

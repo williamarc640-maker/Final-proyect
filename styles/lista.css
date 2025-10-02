@@ -1,6 +1,6 @@
 /* Fondo general y fuente */
 body {
-    background: var(--color-background);
+    background: #ad87d3;
     font-family: 'Segoe UI', Arial, sans-serif;
     color: var(--color-text);
     margin: 0;
@@ -31,7 +31,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     background: var(--color-secondary);
-    box-shadow: 0 2px 8px var(--color-accent);
+    box-shadow: 0 2px 8px black;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 323px;
@@ -68,7 +68,7 @@ td a {
 }
 /* Enlace de acción en tabla hover */
 td a:hover {
-    background: #daa520c9;
+    background: #906bb6;
     color: var(--color-card);
 }
 /* Mensaje de no hay usuarios */

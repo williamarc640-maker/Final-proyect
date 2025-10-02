@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const notification = document.getElementById('notification');
 // productos disponibles, detalles y sus imagenes
     const products = [
-        { id: 1, name: 'Traje Morado', price: 358.654, image: 'img/carrito-traje-M.avif' },
-        { id: 2, name: 'Traje Azul', price: 299.900, image: 'img/carrito-traje-A.webp' },
-        { id: 3, name: 'Traje Negro', price: 406.850, image: 'img/carrito-traje-N.webp' },
-        { id: 4, name: 'Traje Vinotinto', price: 329.400, image: 'img/carrito-traje-V.jpg' },
-        { id: 5, name: 'Gorro de Caza', price: 150.000, image: 'img/carrito-gorro.jpg' },
-        { id: 6, name: 'Guantes de Caza', price: 160.000, image: 'img/carrito-guantes.jpg' },
-        { id: 7, name: 'Abrigo de Cuero', price: 678.570, image: 'img/carrito-cuero.png' },
-        { id: 8, name: 'Chaleco de Caza', price: 215.300, image: 'img/carrito-chaleco.jpg' },
+        { id: 1, name: 'Muñeco de chiken little', price: 50.000, image: 'img/muñeco.jpg' },
+        { id: 2, name: 'Arreglo de rosas', price: 70.000, image: 'img/rosas.jpg' },
+        { id: 3, name: 'Bolso', price: 120.000, image: 'img/bolso.jpg' },
+        { id: 4, name: 'Vestido de bebe', price: 95.000, image: 'img/vestido.jpg' },
+        { id: 5, name: 'Aretes Miyuki', price: 40.000, image: 'img/aretes.jpeg' },
+        { id: 6, name: 'Muñeco de perro', price: 45.000, image: 'img/muñeco-perro.jpeg' },
+        { id: 7, name: 'Vestido niña', price: 85.000, image: 'img/vestido-niña.jpeg' },
+        { id: 8, name: 'Muñeco de la virgen de villa Margarita', price: 120.000, image: 'img/muñeco-virgencita.jpeg' },
     ];
 
     let cart = [];

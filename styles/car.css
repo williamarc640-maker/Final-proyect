@@ -11,15 +11,6 @@ body {
     color: var(--color-primary);
     background-color: var(--color-background);
 }
-/* Header Styles */
-header {
-    background-color: var(--color-primary);
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: solid 3px #ad8a1f;
-}
 /* Navigation Styles */
 nav {
     display: flex;
@@ -121,7 +112,7 @@ main {
 }
 /* Add to Cart Button Hover Effect */
 .btn:hover {
-    background-color: #ad8a1f;
+    background-color:#9c84b4 ;
 }
 /* Shopping Cart Styles */
 .cart {
@@ -130,12 +121,12 @@ main {
     padding: 2rem;
     margin-top: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: solid 3px #ad8a1f;
+    border: solid 3px var(--color-accent);
 }
 /* Cart Title */
 .cart h2 {
     margin-bottom: 1rem;
-    color: var(--color-secondary);
+    color: var(--color-text);
 }
 /* Individual Cart Item */
 .cart-item {
@@ -171,7 +162,7 @@ main {
 .cart-item-quantity {
     display: flex;
     align-items: center;
-    color: white;
+    color: var(--color-text);
 
 }
 /* quantity buttons */
@@ -187,7 +178,7 @@ main {
     justify-content: center;
     cursor: pointer;
     border-radius: 4px;
-    color: white;
+    color: var(--color-text);
 }
 /* Quantity Display */
 .cart-total {

@@ -1,8 +1,8 @@
 <!-- header.php -->
 <header>
     <nav>
-        <img src="img/icono-FJ.PNG">
-        <div class="logo">© Function Juntion</div>
+        <img src="img/icono-SW.jpeg">
+        <div class="logo">© SummerWooll</div>
         <ul>
 <!-- enlaces de navegacion -->
             <li><a href="index.php">inicio</a></li>

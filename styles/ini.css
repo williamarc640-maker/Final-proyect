@@ -10,7 +10,7 @@ body {
     line-height: 1.6;
     color: var(--color-primary);
     background-color: var(--color-background);
-    background-image: url('../img/fondo.png');
+    background-image: url('../img/fondo-SW.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -32,19 +32,19 @@ main {
 }
 /* Form Styles */
 .auth-form {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: white;
     border-radius: 8px;
     padding: 2rem;
     width: 100%;
     max-width: 400px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: solid 3px #ad8a1f;
+    border: solid 3px var(--color-accent);
 }
 /* Form Title Styles */
 .auth-form h1 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: var(--color-secondary);
+    color: var(--color-text);
 }
 /* Form Group Styles */
 .form-group {
@@ -54,7 +54,7 @@ main {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--color-secondary);
+    color: var(--color-text);
 }
 /* Form Input Styles */
 .form-group input {
@@ -80,7 +80,7 @@ main {
 }
 /* Form Button Hover Effect */
 .btn:hover {
-    background-color:  #b88f14;
+    background-color:  #906bb6 ;
 }
 /* Form Footer Styles */
 .form-footer {

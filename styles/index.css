@@ -8,13 +8,13 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: var(--color-primary);
+    color: var(--color-text);
     background-color: var(--color-background);
 }
 /* Header Styles */
 .hero {
     height: 100vh;
-    background-image: url('../img/fondo.png');
+    background-image: url('../img/fondo-SW.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -49,7 +49,7 @@ body {
 }
 /* Call to Action Button Hover Effect */
 .cta-button:hover {
-    background-color: #ad8a1f;
+    background-color:  #906bb6 ;
 }
 /* Main Content Section Styles */
 .content-section {
@@ -62,7 +62,7 @@ body {
 }
 /* Content Section Heading Styles */
 .content-section h2 {
-    color: var(--color-secondary);
+    color: var(--color-text);
     border-bottom: 2px solid var(--color-accent);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
@@ -89,7 +89,7 @@ body {
     background-color: var(--color-secondary);
     color: var(--color-text);
     text-align: center;
-    border: 3px solid #ad8a1f;
+    border: 3px solid var(--color-accent);
 }
 /* Newsletter Heading Styles */
 #newsletter h2{
@@ -109,7 +109,7 @@ body {
 }
 /* Newsletter Button Styles */
 #newsletter-form button {
-    background-color: var(--color-accent);
+    background-color: #C371E3;
     color: var(--color-text);
     border: none;
     padding: 0.5rem 1rem;
@@ -118,7 +118,7 @@ body {
 }
 /* Newsletter Button Hover Effect */
 #newsletter-form button:hover {
-    background-color: #ad8a1f;
+    background-color: #906bb6;
 }
 /* Responsive Navigation Menu */
 @media (max-width: 768px) {
