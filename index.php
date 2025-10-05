@@ -16,31 +16,31 @@
 <!-- hero section -->
         <section id="home" class="hero">
             <h1>©SummerWooll</h1>
-            <p>Nosotros Eclipsamos al Resto</p>
+            <p>lema</p>
             <a href="car.php" class="cta-button">¡¡Explora Nuestro Catalogo!!</a>
         </section>
 <!-- about us -->
         <section id="about" class="content-section">
-            <h2>Acerca de Nosotros</h2>
-            <p>Somos una compañia de ropa para ir de caza o vestir elegante a preferencia presentando gran comodidad y estilo al momento de ir a momentos especiales de gran importancia o tambien ir Casual</p>
+            <h2>Titulo</h2>
+            <p>informacion</p>
 <!-- features -->
             <div class="feature-grid">
                 <div class="feature">
                     <i class="fas fa-tshirt"></i>
-                    <h3>Calidad de Materiales</h3>
-                    <p>Resistente, Comodo y para todas las ocasiones</p>
+                    <h3>caracteristica 1</h3>
+                    <p>informacion</p>
                 </div>
 <!-- feature 2 -->
                 <div class="feature">
                     <i class="fas fa-leaf"></i>
-                    <h3>Exclusividad</h3>
-                    <p>ofresemos servicios persoalizados para nuestros clientes mas fieles y recurrentes</p>
+                    <h3>caracteristica 2</h3>
+                    <p>informacion</p>
                 </div>
 <!-- feature 3 -->
                 <div class="feature">
                     <i class="fas fa-paint-brush"></i>
-                    <h3>Diseños Unicos</h3>
-                    <p>Tenemos un estilo que nos diferencia de la competenvcia, exlusivo para salir e ir de forma casual y elegante a la misma vez</p>
+                    <h3>caracteristica 3</h3>
+                    <p>informacion</p>
                 </div>
             </div>
         </section>
@@ -54,8 +54,6 @@
             </form>
         </section>
     </main>
-<!-- chatbot -->
-<?php include 'chatbot.php'; ?>
 <!-- footer -->
 <?php include 'footer.php'; ?>
 </body>
