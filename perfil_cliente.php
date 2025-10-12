@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Perfil</title>
+    <title>© SummerWooll - Mi Perfil</title>
+    <!-- estilos -->
     <link rel="stylesheet" href="./styles/perfil.css">
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,15 +14,17 @@
     <!-- perfil cliente -->
     <h2>Mis datos</h2>
     <div class="perfil-container">
+    <!-- Mostrar detalles del usuario -->
     <?php if (!isset($_GET['editar'])): ?>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($usuario->usuario_nombre) ?></p>
         <p><strong>Apellido:</strong> <?= htmlspecialchars($usuario->usuario_apellido) ?></p>
         <p><strong>Usuario:</strong> <?= htmlspecialchars($usuario->usuario_usuario) ?></p>
         <p><strong>Correo:</strong> <?= htmlspecialchars($usuario->usuario_email) ?></p>
         <p><strong>Contraseña:</strong> <?= htmlspecialchars($usuario->usuario_clave) ?></p>
-        <a href="index2.php?action=perfilCliente&editar=1" class="perfil-editar"><i class="fas fa-edit"></i> Editar datos</a>
+        <a href="index.php?action=perfilCliente&editar=1" class="perfil-editar"><i class="fas fa-edit"></i> Editar datos</a>
     <?php else: ?>
-        <form action="index2.php?action=actualizarCliente" method="post">
+        <!-- Formulario para editar datos -->
+        <form action="index.php?action=actualizarCliente" method="post">
             <label for="usuario_nombre">Nombre:</label>
             <input type="text" name="usuario_nombre" id="usuario_nombre" value="<?= htmlspecialchars($usuario->usuario_nombre) ?>" required>
             <label for="usuario_apellido">Apellido:</label>
@@ -34,7 +37,7 @@
             <input type="password" name="usuario_clave" id="usuario_clave" value="<?= htmlspecialchars($usuario->usuario_clave) ?>" required>
             <div class="perfil-botones">
                 <button type="submit"><i class="fas fa-save"></i> Guardar cambios</button>
-                <a href="index2.php?action=perfilCliente" class="cancelar"><i class="fas fa-times"></i> Cancelar</a>
+                <a href="index.php?action=perfilCliente" class="cancelar"><i class="fas fa-times"></i> Cancelar</a>
             </div>
         </form>
     <?php endif; ?>

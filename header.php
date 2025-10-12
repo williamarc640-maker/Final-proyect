@@ -6,11 +6,16 @@
         <ul>
 <!-- enlaces de navegacion -->
             <li><a href="index.php">inicio</a></li>
-            <li><a href="login.php">Iniciar sesion</a></li>
+<!-- mostrar enlace de iniciar sesion si el usuario no ha iniciado sesion -->
+            <?php if (!isset($_SESSION['usuario'])): ?>
+                <li><a href="login.php">Iniciar sesion</a></li>
+            <?php endif; ?>
             <li><a href="car.php">Catalogo</a></li>
+<!-- mostrar enlaces de administracion si el usuario es admin o empleado -->
             <?php if (isset($_SESSION['rol']) && ($_SESSION['rol'] === 'admin' || $_SESSION['rol'] === 'empleado')): ?>
-                <li><a href="index2.php">Usuarios</a></li>
-                <li><a href="index2.php?action=productos">Administrar productos</a></li>
+                <li><a href="index.php">Administrar Usuarios</a></li>
+                <li><a href="index.php?action=productos">Administrar productos</a></li>
+                <li><a href="index.php?action=categorias">Administrar categorías</a></li>
             <?php endif; ?>
 <!-- mostrar enlace de cerrar sesion si el usuario ha iniciado sesion -->
             <?php if (isset($_SESSION['usuario'])): ?>

@@ -1,14 +1,14 @@
 <?php
 require_once 'producto.php';
 require_once 'categoria.php';
-
+// clase producto controlador
 class ProductoControlador {
     public function listar() {
         $productos = Producto::obtenerTodo();
         $categorias = Categoria::obtenerTodo();
         include 'productos_lista.php';
     }
-
+// formulario para agregar o editar producto
     public function formulario($id = null) {
         $producto = null;
         $categorias = Categoria::obtenerTodo();
@@ -17,7 +17,7 @@ class ProductoControlador {
         }
         include 'productos_formulario.php';
     }
-
+// guardar producto (insertar o actualizar)
     public function guardar($dato) {
         $foto = '';
         if (isset($_FILES['producto_foto']) && $_FILES['producto_foto']['error'] === UPLOAD_ERR_OK) {
@@ -32,7 +32,7 @@ class ProductoControlador {
             $producto = Producto::obtenerPorId($dato['producto_id']);
             $foto = $producto->producto_foto;
         }
-
+// Insertar o actualizar según si hay ID
         if (!empty($dato['producto_id'])) {
             Producto::actualizar(
                 $dato['producto_id'],
@@ -55,13 +55,13 @@ class ProductoControlador {
                 $_SESSION['id']
             );
         }
-        header("Location: index2.php?action=productos");
+        header("Location: index.php?action=productos");
         exit;
     }
-
+// eliminar producto
     public function eliminar($id) {
         Producto::eliminar($id);
-        header("Location: index2.php?action=productos");
+        header("Location: index.php?action=productos");
         exit;
     }
 }

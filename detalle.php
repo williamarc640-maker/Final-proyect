@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Detalle de Usuario</title>
+    <title>© SummerWooll - Detalle de Usuario</title>
+    <!-- estilos -->
     <link rel="stylesheet" href="styles/detalle.css">
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,6 +14,7 @@
     <!-- Detalle de usuario -->
     <h2>Detalle de Usuario</h2>
     <div class="detalle-container">
+        <!-- Mostrar detalles del usuario -->
     <?php if ($usuario): ?>
         <p><strong>ID:</strong> <?= htmlspecialchars($usuario->usuario_id) ?></p>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($usuario->usuario_nombre) ?></p>
@@ -26,7 +28,7 @@
     <?php endif; ?>
     </div>
     <div class="volver-container">
-        <a href="index2.php" class="volver">Volver</a>
+        <a href="index.php" class="volver">Volver</a>
     </div>
     <!-- footer -->
     <?php include 'footer.php'; ?>

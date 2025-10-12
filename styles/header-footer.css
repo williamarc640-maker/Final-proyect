@@ -73,6 +73,7 @@ footer {
     padding: 2rem 0;
     text-align: center;
     border-top: solid 3px var(--color-accent);
+    margin-top: 100px;
 }
 /* Footer Content Styles */
 .footer-content {
