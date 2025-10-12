@@ -58,6 +58,89 @@ input[type="password"]:focus,
 select:focus {
     border: 1.5px solid var(--color-accent);
 }
+/* formulario de productos */
+.form-producto {
+    max-width: 500px;
+    margin: 2rem auto;
+    background: var(--color-card);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px black;
+    padding: 2rem;
+}
+.form-producto label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+.form-producto input, .form-producto select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.form-producto button, .form-producto a {
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background: #8e44ad;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.form-producto button:hover, .form-producto a:hover {
+    background: #6c3483;
+}
+.preview-img {
+    margin-top: 1rem;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+/* formulario de categoría */
+.form-categoria {
+    max-width: 400px;
+    margin: 2rem auto;
+    background: var(--color-card);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px black;
+    padding: 2rem;
+}
+.form-categoria label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #6c3483;
+}
+.form-categoria input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+.form-categoria button, .form-categoria a {
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background: #8e44ad;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+    display: inline-block;
+}
+.form-categoria button:hover, .form-categoria a:hover {
+    background: #6c3483;
+}
 /* Submit and Cancel Button Styles */
 button, .cancelar {
     background: var(--color-accent);
