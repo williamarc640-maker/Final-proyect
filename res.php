@@ -2,17 +2,19 @@
 require_once 'database.php';
 $mensaje = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST['name'] ?? '';
-    $correo = $_POST['email'] ?? '';
-    $contraseña = $_POST['password'] ?? '';
-    $confirmar = $_POST['confirm-password'] ?? '';
-    if ($contraseña !== $confirmar) {
+    $nombre = $_POST['usuario_nombre'] ?? '';
+    $apellido = $_POST['usuario_apellido'] ?? '';
+    $usuario = $_POST['usuario_usuario'] ?? '';
+    $email = $_POST['usuario_email'] ?? '';
+    $clave = $_POST['usuario_clave'] ?? '';
+    $confirmar = $_POST['confirmar_clave'] ?? '';
+    if ($clave !== $confirmar) {
         $mensaje = "Las contraseñas no coinciden.";
     } else {
         $db = Database::conectar();
-        $stmt = $db->prepare("INSERT INTO usuarios (nombre, correo, contraseña, rol) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$nombre, $correo, $contraseña, 'empleado']);
-        $mensaje = "Usuario registrado correctamente. <a href='ini.php'>Inicia sesión aquí</a>";
+        $stmt = $db->prepare("INSERT INTO usuarios (usuario_nombre, usuario_apellido, usuario_usuario, usuario_email, usuario_clave, rol) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$nombre, $apellido, $usuario, $email, $clave, 'empleado']);
+        $mensaje = "Usuario registrado correctamente. <a href='login.php'>Inicia sesión aquí</a>";
     }
 }
 ?>
@@ -37,24 +39,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h1>Crear Cuenta</h1>
                 <form id="register-form" method="post">
                     <div class="form-group">
-                        <label for="name">Nombre Completo</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="usuario_nombre">Nombre</label>
+                        <input type="text" id="usuario_nombre" name="usuario_nombre" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Gmail</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="usuario_apellido">Apellido</label>
+                        <input type="text" id="usuario_apellido" name="usuario_apellido" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <input type="password" id="password" name="password" required>
+                        <label for="usuario_usuario">Nombre de Usuario</label>
+                        <input type="text" id="usuario_usuario" name="usuario_usuario" required>
                     </div>
                     <div class="form-group">
-                        <label for="confirm-password">Confirmar Contraseña</label>
-                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <label for="usuario_email">Correo Electrónico</label>
+                        <input type="email" id="usuario_email" name="usuario_email" required>
+                    </div>
+                    <div class="form-group">sip
+                        <label for="usuario_clave">Contraseña</label>
+                        <input type="password" id="usuario_clave" name="usuario_clave" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmar_clave">Confirmar Contraseña</label>
+                        <input type="password" id="confirmar_clave" name="confirmar_clave" required>
                     </div>
                     <button type="submit" class="btn">Registrar</button>
                 </form>
-                <p class="form-footer">¿Ya Tienes Cuenta? <a href="ini.php">Inicia Sesion aca</a></p>
+                <p class="form-footer">¿Ya Tienes Cuenta? <a href="login.php">Inicia Sesion aca</a></p>
 <?php if ($mensaje): ?>
     <p style="color:green;"><?= $mensaje ?></p>
 <?php endif; ?>

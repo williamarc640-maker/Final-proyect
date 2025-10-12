@@ -14,10 +14,12 @@
     <h2>Detalle de Usuario</h2>
     <div class="detalle-container">
     <?php if ($usuario): ?>
-        <p><strong>ID:</strong> <?= htmlspecialchars($usuario->id) ?></p>
-        <p><strong>Nombre:</strong> <?= htmlspecialchars($usuario->nombre) ?></p>
-        <p><strong>Correo:</strong> <?= htmlspecialchars($usuario->correo) ?></p>
-        <p><strong>Contraseña:</strong> <?= htmlspecialchars($usuario->contraseña) ?></p>
+        <p><strong>ID:</strong> <?= htmlspecialchars($usuario->usuario_id) ?></p>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($usuario->usuario_nombre) ?></p>
+        <p><strong>Apellido:</strong> <?= htmlspecialchars($usuario->usuario_apellido) ?></p>
+        <p><strong>Usuario:</strong> <?= htmlspecialchars($usuario->usuario_usuario) ?></p>
+        <p><strong>Correo:</strong> <?= htmlspecialchars($usuario->usuario_email) ?></p>
+        <p><strong>Contraseña:</strong> <?= htmlspecialchars($usuario->usuario_clave) ?></p>
         <p><strong>Rol:</strong> <?= htmlspecialchars($usuario->rol) ?></p>
     <?php else: ?>
         <p>No se encontró el usuario.</p>

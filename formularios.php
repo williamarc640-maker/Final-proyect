@@ -14,15 +14,21 @@
     <h2><?= $usuario ? 'Editar' : 'Agregar' ?> Usuario</h2>
     <div class="form-container">
         <form action="index2.php?action=guardar" method="post">
-            <input type="hidden" name="id" value="<?= $usuario->id ?? '' ?>">
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" value="<?= $usuario->nombre ?? '' ?>" required>
+            <input type="hidden" name="usuario_id" value="<?= $usuario->usuario_id ?? '' ?>">
+            <label for="usuario_nombre">Nombre:</label>
+            <input type="text" name="usuario_nombre" id="usuario_nombre" value="<?= $usuario->usuario_nombre ?? '' ?>" required>
 
-            <label for="correo">Correo:</label>
-            <input type="email" name="correo" id="correo" value="<?= $usuario->correo ?? '' ?>" required>
+            <label for="usuario_apellido">Apellido:</label>
+            <input type="text" name="usuario_apellido" id="usuario_apellido" value="<?= $usuario->usuario_apellido ?? '' ?>" required>
 
-            <label for="contraseña">Contraseña:</label>
-            <input type="password" name="contraseña" id="contraseña" value="<?= $usuario->contraseña ?? '' ?>" required>
+            <label for="usuario_usuario">Usuario:</label>
+            <input type="text" name="usuario_usuario" id="usuario_usuario" value="<?= $usuario->usuario_usuario ?? '' ?>" required>
+
+            <label for="usuario_email">Correo:</label>
+            <input type="email" name="usuario_email" id="usuario_email" value="<?= $usuario->usuario_email ?? '' ?>" required>
+
+            <label for="usuario_clave">Contraseña:</label>
+            <input type="password" name="usuario_clave" id="usuario_clave" value="<?= $usuario->usuario_clave ?? '' ?>" required>
 
             <?php if ($_SESSION['rol'] === 'admin'): ?>
                 <label for="rol">Rol:</label>

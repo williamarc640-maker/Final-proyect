@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,6 +22,8 @@
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Usuario</th>
                 <th>Correo</th>
                 <th>Contraseña</th>
                 <th>Rol</th>
@@ -30,16 +31,18 @@
             </tr>
             <?php foreach ($usuarios as $u): ?>
             <tr>
-                <td><?= htmlspecialchars($u->id) ?></td>
-                <td><?= htmlspecialchars($u->nombre) ?></td>
-                <td><?= htmlspecialchars($u->correo) ?></td>
-                <td><?= htmlspecialchars($u->contraseña) ?></td>
+                <td><?= htmlspecialchars($u->usuario_id) ?></td>
+                <td><?= htmlspecialchars($u->usuario_nombre) ?></td>
+                <td><?= htmlspecialchars($u->usuario_apellido) ?></td>
+                <td><?= htmlspecialchars($u->usuario_usuario) ?></td>
+                <td><?= htmlspecialchars($u->usuario_email) ?></td>
+                <td><?= htmlspecialchars($u->usuario_clave) ?></td>
                 <td><?= htmlspecialchars($u->rol) ?></td>
                 <td>
-                    <a href="index2.php?action=detalle&id=<?= $u->id ?>">Ver</a> | 
-                    <a href="index2.php?action=formulario&id=<?= $u->id ?>">Editar</a>
+                    <a href="index2.php?action=detalle&id=<?= $u->usuario_id ?>">Ver</a> | 
+                    <a href="index2.php?action=formulario&id=<?= $u->usuario_id ?>">Editar</a>
                     <?php if ($_SESSION['rol'] === 'admin'): ?>
-                        | <a href="index2.php?action=eliminar&id=<?= $u->id ?>" onclick="return confirm('¿Eliminar este usuario?')">Eliminar</a>
+                        | <a href="index2.php?action=eliminar&id=<?= $u->usuario_id ?>" onclick="return confirm('¿Eliminar este usuario?')">Eliminar</a>
                     <?php endif; ?>
                 </td>
             </tr>
