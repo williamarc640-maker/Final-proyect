@@ -30,8 +30,8 @@ class Controlador {
         // Si el usuario logueado es empleado, fuerza el rol a "empleado"
         if ($_SESSION['rol'] === 'empleado') {
             // Si está editando un usuario admin, no permitir
-            if (!empty($dato['id'])) {
-                $usuario = Usuario::obtenerPorId($dato['id']);
+            if (!empty($dato['usuario_id'])) {
+                $usuario = Usuario::obtenerPorId($dato['usuario_id']);
                 if ($usuario && $usuario->rol === 'admin') {
                     header("Location: index2.php");
                     exit;
@@ -39,10 +39,25 @@ class Controlador {
             }
             $dato['rol'] = 'empleado';
         }
-        if (!empty($dato['id'])) {
-            Usuario::actualizar($dato['id'], $dato['nombre'], $dato['correo'], $dato['contraseña'], $dato['rol']);
+        if (!empty($dato['usuario_id'])) {
+            Usuario::actualizar(
+                $dato['usuario_id'],
+                $dato['usuario_nombre'],
+                $dato['usuario_apellido'],
+                $dato['usuario_usuario'],
+                $dato['usuario_email'],
+                $dato['usuario_clave'],
+                $dato['rol']
+            );
         } else {
-            Usuario::insertar($dato['nombre'], $dato['correo'], $dato['contraseña'], $dato['rol'] ?? 'empleado');
+            Usuario::insertar(
+                $dato['usuario_nombre'],
+                $dato['usuario_apellido'],
+                $dato['usuario_usuario'],
+                $dato['usuario_email'],
+                $dato['usuario_clave'],
+                $dato['rol'] ?? 'empleado'
+            );
         }
         header("Location: index2.php");
         exit;
@@ -64,8 +79,15 @@ class Controlador {
     }
 /* actualizar datos del cliente */
     public function actualizarCliente($dato) {
-        // El rol siempre será 'cliente'
-        Usuario::actualizar($_SESSION['id'], $dato['nombre'], $dato['correo'], $dato['contraseña'], 'cliente');
+        Usuario::actualizar(
+            $_SESSION['id'],
+            $dato['usuario_nombre'],
+            $dato['usuario_apellido'],
+            $dato['usuario_usuario'],
+            $dato['usuario_email'],
+            $dato['usuario_clave'],
+            'cliente'
+        );
         header("Location: index2.php?action=perfilCliente");
         exit;
     }

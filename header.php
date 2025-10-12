@@ -1,12 +1,12 @@
 <!-- header.php -->
 <header>
     <nav>
-        <img src="img/icono-SW.jpeg">
+        <img src="img/icono-SW.png">
         <div class="logo">© SummerWooll</div>
         <ul>
 <!-- enlaces de navegacion -->
             <li><a href="index.php">inicio</a></li>
-            <li><a href="ini.php">Iniciar sesion</a></li>
+            <li><a href="login.php">Iniciar sesion</a></li>
             <li><a href="car.php">Catalogo</a></li>
 <!-- carrito de compras, solo se muestra en car.php -->
             <?php if (basename($_SERVER['PHP_SELF']) === 'car.php'): ?>

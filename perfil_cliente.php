@@ -14,18 +14,24 @@
     <h2>Mis datos</h2>
     <div class="perfil-container">
     <?php if (!isset($_GET['editar'])): ?>
-        <p><strong>Nombre:</strong> <?= htmlspecialchars($usuario->nombre) ?></p>
-        <p><strong>Correo:</strong> <?= htmlspecialchars($usuario->correo) ?></p>
-        <p><strong>Contraseña:</strong> <?= htmlspecialchars($usuario->contraseña) ?></p>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($usuario->usuario_nombre) ?></p>
+        <p><strong>Apellido:</strong> <?= htmlspecialchars($usuario->usuario_apellido) ?></p>
+        <p><strong>Usuario:</strong> <?= htmlspecialchars($usuario->usuario_usuario) ?></p>
+        <p><strong>Correo:</strong> <?= htmlspecialchars($usuario->usuario_email) ?></p>
+        <p><strong>Contraseña:</strong> <?= htmlspecialchars($usuario->usuario_clave) ?></p>
         <a href="index2.php?action=perfilCliente&editar=1" class="perfil-editar"><i class="fas fa-edit"></i> Editar datos</a>
     <?php else: ?>
         <form action="index2.php?action=actualizarCliente" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" value="<?= htmlspecialchars($usuario->nombre) ?>" required>
-            <label for="correo">Correo:</label>
-            <input type="email" name="correo" id="correo" value="<?= htmlspecialchars($usuario->correo) ?>" required>
-            <label for="contraseña">Contraseña:</label>
-            <input type="password" name="contraseña" id="contraseña" value="<?= htmlspecialchars($usuario->contraseña) ?>" required>
+            <label for="usuario_nombre">Nombre:</label>
+            <input type="text" name="usuario_nombre" id="usuario_nombre" value="<?= htmlspecialchars($usuario->usuario_nombre) ?>" required>
+            <label for="usuario_apellido">Apellido:</label>
+            <input type="text" name="usuario_apellido" id="usuario_apellido" value="<?= htmlspecialchars($usuario->usuario_apellido) ?>" required>
+            <label for="usuario_usuario">Usuario:</label>
+            <input type="text" name="usuario_usuario" id="usuario_usuario" value="<?= htmlspecialchars($usuario->usuario_usuario) ?>" required>
+            <label for="usuario_email">Correo:</label>
+            <input type="email" name="usuario_email" id="usuario_email" value="<?= htmlspecialchars($usuario->usuario_email) ?>" required>
+            <label for="usuario_clave">Contraseña:</label>
+            <input type="password" name="usuario_clave" id="usuario_clave" value="<?= htmlspecialchars($usuario->usuario_clave) ?>" required>
             <div class="perfil-botones">
                 <button type="submit"><i class="fas fa-save"></i> Guardar cambios</button>
                 <a href="index2.php?action=perfilCliente" class="cancelar"><i class="fas fa-times"></i> Cancelar</a>

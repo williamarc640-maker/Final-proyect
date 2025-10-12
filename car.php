@@ -33,7 +33,7 @@
                 <strong>Total: COP<span id="cart-total">0.00</span></strong>
             </div>
 <!-- checkout button -->
-            <li><a href="ini.php" style="text-decoration: none;"> <button id="checkout-btn" class="btn">Comprar</button></a></li> 
+            <li><a href="login.php" style="text-decoration: none;"> <button id="checkout-btn" class="btn">Comprar</button></a></li> 
         </section>
     </main>
 <!-- footer -->

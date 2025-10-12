@@ -1,24 +1,22 @@
 <?php
 require_once 'database.php';
-/* ini.php */
 session_start();
 $mensaje = "";
 if (isset($_SESSION['usuario'])) {
     header("Location: index2.php");
     exit;
 }
-/* manejo del formulario */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['usuario'] ?? '';
-    $contraseña = $_POST['contraseña'] ?? '';
-    $db = database::conectar();
-    $stmt = $db->prepare("SELECT * FROM usuarios WHERE nombre = ? AND contraseña = ?");
-    $stmt->execute([$usuario, $contraseña]);
+    $clave = $_POST['clave'] ?? '';
+    $db = Database::conectar();
+    $stmt = $db->prepare("SELECT * FROM usuarios WHERE usuario_usuario = ? AND usuario_clave = ?");
+    $stmt->execute([$usuario, $clave]);
     $user = $stmt->fetch(PDO::FETCH_OBJ);
     if ($user) {
-        $_SESSION['usuario'] = $user->nombre;
+        $_SESSION['usuario'] = $user->usuario_usuario;
         $_SESSION['rol'] = $user->rol;
-        $_SESSION['id'] = $user->id; // Guarda el ID del usuario
+        $_SESSION['id'] = $user->usuario_id;
         header("Location: index2.php");
         exit;
     } else {
@@ -55,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" id="usuario" name="usuario" required>
         </div>
         <div class="form-group">
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña" required><br><br>
+        <label for="clave">Contraseña:</label>
+        <input type="password" id="clave" name="clave" required><br><br>
         </div>
         <button type="submit" class="btn">Iniciar sesion</button>
     </form>
