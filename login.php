@@ -1,11 +1,13 @@
 <?php
 require_once 'database.php';
+// Inicio de sesion
 session_start();
 $mensaje = "";
 if (isset($_SESSION['usuario'])) {
     header("Location: index.php");
     exit;
 }
+// Manejo del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['usuario'] ?? '';
     $clave = $_POST['clave'] ?? '';
@@ -30,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>© SummerWooll - Inicio de sesion</title>
-    <script src="archivesjs/ini.js"></script>
-    <link rel="stylesheet" href="styles/ini.css">
+    <!-- estilos -->
+    <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -44,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- formulario de inicio de sesion -->
             <section class="auth-form">
                 <h1>Bienvenido</h1>
+                <!-- Mostrar mensaje de error si existe -->
     <?php if ($mensaje): ?>
         <p style="color:red;"><?= $mensaje ?></p>
     <?php endif; ?>

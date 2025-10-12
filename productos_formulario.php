@@ -5,7 +5,9 @@
     <title><?= $producto ? 'Editar' : 'Agregar' ?> Producto</title>
     <link rel="stylesheet" href="styles/formularios.css">
     <link rel="stylesheet" href="styles/header-footer.css">
+    <!-- por recomendacion de una ia toca dejar esto aca -->
     <style>
+        /* estilos específicos para el formulario de productos */
         .form-producto {
             max-width: 500px;
             margin: 2rem auto;
@@ -51,7 +53,9 @@
     </style>
 </head>
 <body>
+    <!-- header -->
 <?php include 'header.php'; ?>
+<!-- formulario para agregar o editar producto -->
 <h2 style="text-align:center"><?= $producto ? 'Editar' : 'Agregar' ?> Producto</h2>
 <form class="form-producto" action="index.php?action=producto_guardar" method="post" enctype="multipart/form-data">
     <input type="hidden" name="producto_id" value="<?= $producto->producto_id ?? '' ?>">
@@ -72,6 +76,7 @@
     <?php endif; ?>
     <label>Categoría:</label>
     <select name="categoria_id" required>
+        <!-- Cargar categorías dinámicamente -->
         <?php foreach ($categorias as $cat): ?>
             <option value="<?= $cat->categoria_id ?>" <?= ($producto && $producto->categoria_id == $cat->categoria_id) ? 'selected' : '' ?>>
                 <?= htmlspecialchars($cat->categoria_nombre) ?>
@@ -82,12 +87,14 @@
     <a href="index.php?action=productos">Cancelar</a>
 </form>
 <script>
+    // Vista previa de la imagen seleccionada
 function previewImage(event) {
     const img = document.getElementById('img-preview');
     img.src = URL.createObjectURL(event.target.files[0]);
     img.style.display = 'block';
 }
 </script>
+<!-- footer -->
 <?php include 'footer.php'; ?>
 </body>
 </html>

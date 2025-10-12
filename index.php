@@ -1,22 +1,21 @@
 <?php
+// Controlador principal
 session_start();
 require_once 'usuariocontroller.php';
 require_once 'productocontroller.php';
 require_once 'categoriacontroller.php';
-
+// Instanciar controladores
 $controlador = new Controlador();
 $productoControlador = new ProductoControlador();
 $categoriaControlador = new CategoriaControlador();
-
+// Obtener acción y id desde la URL
 $action = $_GET['action'] ?? '';
 $id = $_GET['id'] ?? null;
-
 // Si no hay sesión, muestra la portada
 if (!isset($_SESSION['usuario'])) {
     include 'portada.php'; // Mueve el HTML de tu index.php actual a portada.php
     exit;
 }
-
 // Si es cliente, solo perfil y catálogo
 if ($_SESSION['rol'] === 'cliente') {
     if ($action === 'actualizarCliente') {
@@ -28,7 +27,6 @@ if ($_SESSION['rol'] === 'cliente') {
     }
     exit;
 }
-
 // Admin y empleado: panel completo
 switch ($action) {
     case 'formulario':

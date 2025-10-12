@@ -11,7 +11,6 @@ h2 {
     margin-bottom: 20px;
     margin-top: 150px;
 }
-
 /* Enlaces principales */
 a {
     color: var(--color-text);
@@ -25,7 +24,6 @@ a:hover {
     color: var(--color-accent);
     text-decoration: underline;
 }
-
 /* Tabla de usuarios */
 table {
     width: 100%;
@@ -34,7 +32,7 @@ table {
     box-shadow: 0 2px 8px black;
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 323px;
+    margin-bottom: 200px;
 }
 /* Encabezados de tabla */
 th, td {

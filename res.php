@@ -1,6 +1,8 @@
 <?php
+// res.php - Registro de usuarios
 require_once 'database.php';
 $mensaje = "";
+// Manejo del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['usuario_nombre'] ?? '';
     $apellido = $_POST['usuario_apellido'] ?? '';
@@ -11,9 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($clave !== $confirmar) {
         $mensaje = "Las contraseñas no coinciden.";
     } else {
+        // Insertar nuevo usuario con rol 'cliente'
         $db = Database::conectar();
         $stmt = $db->prepare("INSERT INTO usuarios (usuario_nombre, usuario_apellido, usuario_usuario, usuario_email, usuario_clave, rol) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$nombre, $apellido, $usuario, $email, $clave, 'empleado']);
+        $stmt->execute([$nombre, $apellido, $usuario, $email, $clave, 'cliente']);
         $mensaje = "Usuario registrado correctamente. <a href='login.php'>Inicia sesión aquí</a>";
     }
 }
@@ -24,7 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>© SummerWooll - Registro</title>
+    <!-- scripts -->
     <script src="archivesjs/ini.js"></script>
+    <!-- estilos -->
     <link rel="stylesheet" href="styles/ini.css">
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

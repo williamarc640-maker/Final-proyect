@@ -2,16 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Productos</title>
+    <title>© SummerWooll - Productos</title>
+    <!-- estilos -->
     <link rel="stylesheet" href="styles/lista.css">
     <link rel="stylesheet" href="styles/header-footer.css">
 </head>
 <body>
+    <!-- header -->
 <?php include 'header.php'; ?>
+<!-- lista de productos -->
 <h2>Productos</h2>
-<?php if ($_SESSION['rol'] === 'admin' || $_SESSION['rol'] === 'empleado'): ?>
     <a href="index.php?action=producto_form">Agregar producto</a>
-<?php endif; ?>
 <table border="1" cellpadding="5">
     <tr>
         <th>ID</th>
@@ -21,10 +22,9 @@
         <th>Stock</th>
         <th>Foto</th>
         <th>Categoría</th>
-        <?php if ($_SESSION['rol'] === 'admin' || $_SESSION['rol'] === 'empleado'): ?>
         <th>Acciones</th>
-        <?php endif; ?>
     </tr>
+    <!-- recorrer productos -->
     <?php foreach ($productos as $p): ?>
     <tr>
         <td><?= htmlspecialchars($p->producto_id) ?></td>
@@ -43,6 +43,8 @@
     </tr>
     <?php endforeach; ?>
 </table>
+<br><br><br><br><br><br>
+<!--footer -->
 <?php include 'footer.php'; ?>
 </body>
 </html>
