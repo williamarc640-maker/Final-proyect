@@ -53,7 +53,7 @@
 <body>
 <?php include 'header.php'; ?>
 <h2 style="text-align:center"><?= $producto ? 'Editar' : 'Agregar' ?> Producto</h2>
-<form class="form-producto" action="index2.php?action=producto_guardar" method="post" enctype="multipart/form-data">
+<form class="form-producto" action="index.php?action=producto_guardar" method="post" enctype="multipart/form-data">
     <input type="hidden" name="producto_id" value="<?= $producto->producto_id ?? '' ?>">
     <label>Código:</label>
     <input type="text" name="producto_codigo" value="<?= $producto->producto_codigo ?? '' ?>" required>
@@ -79,7 +79,7 @@
         <?php endforeach; ?>
     </select>
     <button type="submit">Guardar</button>
-    <a href="index2.php?action=productos">Cancelar</a>
+    <a href="index.php?action=productos">Cancelar</a>
 </form>
 <script>
 function previewImage(event) {

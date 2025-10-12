@@ -19,7 +19,7 @@ class Controlador {
             $usuario = Usuario::obtenerPorId($id);
             // Si el usuario logueado es empleado y el usuario a editar es admin, no permitir
             if ($_SESSION['rol'] === 'empleado' && $usuario && $usuario->rol === 'admin') {
-                header("Location: index2.php");
+                header("Location: index.php");
                 exit;
             }
         }
@@ -33,7 +33,7 @@ class Controlador {
             if (!empty($dato['usuario_id'])) {
                 $usuario = Usuario::obtenerPorId($dato['usuario_id']);
                 if ($usuario && $usuario->rol === 'admin') {
-                    header("Location: index2.php");
+                    header("Location: index.php");
                     exit;
                 }
             }
@@ -59,17 +59,17 @@ class Controlador {
                 $dato['rol'] ?? 'empleado'
             );
         }
-        header("Location: index2.php");
+        header("Location: index.php");
         exit;
     }
 /* eliminar usuario */
     public function eliminar($id) {
         if ($_SESSION['rol'] !== 'admin') {
-            header("Location: index2.php");
+            header("Location: index.php");
             exit;
         }
         Usuario::eliminar($id);
-        header("Location: index2.php");
+        header("Location: index.php");
         exit;
     }
 /* mostrar datos del cliente */
@@ -88,7 +88,7 @@ class Controlador {
             $dato['usuario_clave'],
             'cliente'
         );
-        header("Location: index2.php?action=perfilCliente");
+        header("Location: index.php?action=perfilCliente");
         exit;
     }
 }

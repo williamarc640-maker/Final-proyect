@@ -12,7 +12,7 @@
 <body>
     <h2>Listado de usuarios</h2>
     <?php if ($_SESSION['rol'] === 'admin' || $_SESSION['rol'] === 'empleado'): ?>
-        <a href="index2.php?action=formulario">Agregar usuario</a> |
+        <a href="index.php?action=formulario">Agregar usuario</a> |
     <?php endif; ?>
     <a href="logout.php">Cerrar sesión</a>
     <br><br>
@@ -39,10 +39,10 @@
                 <td><?= htmlspecialchars($u->usuario_clave) ?></td>
                 <td><?= htmlspecialchars($u->rol) ?></td>
                 <td>
-                    <a href="index2.php?action=detalle&id=<?= $u->usuario_id ?>">Ver</a> | 
-                    <a href="index2.php?action=formulario&id=<?= $u->usuario_id ?>">Editar</a>
+                    <a href="index.php?action=detalle&id=<?= $u->usuario_id ?>">Ver</a> | 
+                    <a href="index.php?action=formulario&id=<?= $u->usuario_id ?>">Editar</a>
                     <?php if ($_SESSION['rol'] === 'admin'): ?>
-                        | <a href="index2.php?action=eliminar&id=<?= $u->usuario_id ?>" onclick="return confirm('¿Eliminar este usuario?')">Eliminar</a>
+                        | <a href="index.php?action=eliminar&id=<?= $u->usuario_id ?>" onclick="return confirm('¿Eliminar este usuario?')">Eliminar</a>
                     <?php endif; ?>
                 </td>
             </tr>

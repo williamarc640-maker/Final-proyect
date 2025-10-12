@@ -36,5 +36,33 @@ $productos = Producto::obtenerTodo();
 </main>
 <?php include 'footer.php'; ?>
 <div id="notification" class="notification"></div>
+
+<!-- Modal de detalles del producto -->
+<div id="product-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <img id="modal-image" src="" alt="" class="modal-image">
+        <h3 id="modal-title"></h3>
+        <p id="modal-category"></p>
+        <p id="modal-price"></p>
+        <p id="modal-stock"></p>
+        <button id="modal-add-cart" class="btn">Añadir al Carrito</button>
+    </div>
+</div>
+<style>
+.modal {
+    position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center;
+}
+.modal-content {
+    background: #fff; padding: 2rem; border-radius: 10px; max-width: 350px; width: 90%; text-align: center; position: relative;
+}
+.close-modal {
+    position: absolute; right: 1rem; top: 1rem; font-size: 2rem; cursor: pointer; color: #8e44ad;
+}
+.modal-image {
+    width: 100%; max-width: 200px; border-radius: 8px; margin-bottom: 1rem;
+}
+</style>
 </body>
 </html>

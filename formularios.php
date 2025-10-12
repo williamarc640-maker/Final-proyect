@@ -13,7 +13,7 @@
     <!-- formulario -->
     <h2><?= $usuario ? 'Editar' : 'Agregar' ?> Usuario</h2>
     <div class="form-container">
-        <form action="index2.php?action=guardar" method="post">
+        <form action="index.php?action=guardar" method="post">
             <input type="hidden" name="usuario_id" value="<?= $usuario->usuario_id ?? '' ?>">
             <label for="usuario_nombre">Nombre:</label>
             <input type="text" name="usuario_nombre" id="usuario_nombre" value="<?= $usuario->usuario_nombre ?? '' ?>" required>
@@ -41,7 +41,7 @@
 
             <div class="botones">
                 <button type="submit"><i class="fas fa-save"></i> Guardar</button>
-                <a href="index2.php" class="cancelar"><i class="fas fa-times"></i> Cancelar</a>
+                <a href="index.php" class="cancelar"><i class="fas fa-times"></i> Cancelar</a>
             </div>
         </form>
     </div>

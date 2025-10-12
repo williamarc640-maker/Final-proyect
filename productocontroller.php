@@ -55,13 +55,13 @@ class ProductoControlador {
                 $_SESSION['id']
             );
         }
-        header("Location: index2.php?action=productos");
+        header("Location: index.php?action=productos");
         exit;
     }
 
     public function eliminar($id) {
         Producto::eliminar($id);
-        header("Location: index2.php?action=productos");
+        header("Location: index.php?action=productos");
         exit;
     }
 }

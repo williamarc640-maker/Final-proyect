@@ -10,7 +10,7 @@
 <?php include 'header.php'; ?>
 <h2>Productos</h2>
 <?php if ($_SESSION['rol'] === 'admin' || $_SESSION['rol'] === 'empleado'): ?>
-    <a href="index2.php?action=producto_form">Agregar producto</a>
+    <a href="index.php?action=producto_form">Agregar producto</a>
 <?php endif; ?>
 <table border="1" cellpadding="5">
     <tr>
@@ -36,8 +36,8 @@
         <td><?= htmlspecialchars($p->categoria_nombre) ?></td>
         <?php if ($_SESSION['rol'] === 'admin' || $_SESSION['rol'] === 'empleado'): ?>
         <td>
-            <a href="index2.php?action=producto_form&id=<?= $p->producto_id ?>">Editar</a> |
-            <a href="index2.php?action=producto_eliminar&id=<?= $p->producto_id ?>" onclick="return confirm('¿Eliminar este producto?')">Eliminar</a>
+            <a href="index.php?action=producto_form&id=<?= $p->producto_id ?>">Editar</a> |
+            <a href="index.php?action=producto_eliminar&id=<?= $p->producto_id ?>" onclick="return confirm('¿Eliminar este producto?')">Eliminar</a>
         </td>
         <?php endif; ?>
     </tr>

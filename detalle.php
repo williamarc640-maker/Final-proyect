@@ -26,7 +26,7 @@
     <?php endif; ?>
     </div>
     <div class="volver-container">
-        <a href="index2.php" class="volver">Volver</a>
+        <a href="index.php" class="volver">Volver</a>
     </div>
     <!-- footer -->
     <?php include 'footer.php'; ?>

@@ -3,7 +3,7 @@ require_once 'database.php';
 session_start();
 $mensaje = "";
 if (isset($_SESSION['usuario'])) {
-    header("Location: index2.php");
+    header("Location: index.php");
     exit;
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['usuario'] = $user->usuario_usuario;
         $_SESSION['rol'] = $user->rol;
         $_SESSION['id'] = $user->usuario_id;
-        header("Location: index2.php");
+        header("Location: index.php");
         exit;
     } else {
         $mensaje = "Usuario o contraseña incorrectos.";
