@@ -1,10 +1,10 @@
 <?php
-require_once 'categoria.php';
+require_once 'gestion/categoria.php';
 /* clase categoria controlador */
 class CategoriaControlador {
     public function listar() {
         $categorias = Categoria::obtenerTodo();
-        include 'categorias_lista.php';
+        include 'listas/categorias_lista.php';
     }
 /* formulario para agregar o editar categoria */
     public function formulario($id = null) {
@@ -12,7 +12,7 @@ class CategoriaControlador {
         if ($id) {
             $categoria = Categoria::obtenerPorId($id);
         }
-        include 'categorias_formulario.php';
+        include 'formularios/categorias_formulario.php';
     }
 /* guardar categoria (insertar o actualizar) */
     public function guardar($dato) {

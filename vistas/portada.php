@@ -11,7 +11,7 @@
 </head>
 <body>
 <!-- header -->
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
     <main>
 <!-- hero section -->
         <section id="home" class="hero">
@@ -55,6 +55,6 @@
         </section>
     </main>
 <!-- footer -->
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
 </body>
 </html>

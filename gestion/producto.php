@@ -1,5 +1,5 @@
 <?php
-require_once 'database.php';
+require_once 'database/database.php';
 // clase producto
 class Producto {
     public static function obtenerTodo() {

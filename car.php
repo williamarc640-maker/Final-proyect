@@ -1,7 +1,7 @@
 <!-- car.php -->
 <!-- codigo para obtener los productos de la base de datos -->
 <?php
-require_once 'producto.php';
+require_once 'gestion/producto.php';
 $productos = Producto::obtenerTodo();
 ?>
 <!-- codigo HTML -->
@@ -22,7 +22,7 @@ $productos = Producto::obtenerTodo();
 </head>
 <body>
 <!-- header -->
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
 <main>
     <section id="catalog" class="catalog">
         <h1>Nuestro catálogo</h1>
@@ -54,6 +54,6 @@ $productos = Producto::obtenerTodo();
     </div>
 </div>
 <!-- footer -->
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
 </body>
 </html>

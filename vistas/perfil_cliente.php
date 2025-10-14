@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- header -->
-    <?php include 'header.php'; ?>
+    <?php include 'inc/header.php'; ?>
     <!-- perfil cliente -->
     <h2>Mis datos</h2>
     <div class="perfil-container">
@@ -46,6 +46,6 @@
         <a href="logout.php" class="perfil-editar"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
     </div>
     <!-- footer -->
-    <?php include 'footer.php'; ?>
+    <?php include 'inc/footer.php'; ?>
 </body>
 </html>

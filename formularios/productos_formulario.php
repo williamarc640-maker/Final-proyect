@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- header -->
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
 <!-- formulario para agregar o editar producto -->
 <h2 style="text-align:center"><?= $producto ? 'Editar' : 'Agregar' ?> Producto</h2>
 <form class="form-producto" action="index.php?action=producto_guardar" method="post" enctype="multipart/form-data">
@@ -50,6 +50,6 @@ function previewImage(event) {
 }
 </script>
 <!-- footer -->
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
 </body>
 </html>

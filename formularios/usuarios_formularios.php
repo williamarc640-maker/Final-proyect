@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- header -->
-    <?php include 'header.php'; ?>
+    <?php include 'inc/header.php'; ?>
     <!-- formulario -->
     <h2><?= $usuario ? 'Editar' : 'Agregar' ?> Usuario</h2>
     <!-- formulario para agregar o editar usuario -->
@@ -42,6 +42,6 @@
         </form>
     </div>
     <!-- footer -->
-    <?php include 'footer.php'; ?>
+    <?php include 'inc/footer.php'; ?>
 </body>
 </html>

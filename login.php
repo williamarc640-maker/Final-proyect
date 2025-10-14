@@ -1,5 +1,5 @@
 <?php
-require_once 'database.php';
+require_once 'database/database.php';
 // Inicio de sesion
 session_start();
 $mensaje = "";
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <!-- conexion a index -->
     <div class="container">
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
 <!-- main -->
         <main>
 <!-- formulario de inicio de sesion -->
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </section>
         </main>
 <!-- footer -->
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
     </div>
     <div id="notification" class="notification"></div>
 </body>
