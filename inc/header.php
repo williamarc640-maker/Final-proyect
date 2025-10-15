@@ -30,4 +30,4 @@
             <i class="fas fa-bars"></i>
         </div>
     </nav>
-</header>
+</header>\n<script src="chatbot_widget.js"></script>\n

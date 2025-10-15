@@ -11,7 +11,7 @@
   <div class="container">
     <h2>⚠️ Pago cancelado</h2>
     <p>Has cancelado el proceso de pago. Puedes volver al carrito para intentarlo de nuevo.</p>
-    <button class="cancelar" onclick="window.location.href='carrito.php'">Volver al carrito</button>
+    <button class="cancelar" onclick="window.location.href='car.php'">Volver al carrito</button>
   </div>
 </body>
 </html>

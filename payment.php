@@ -15,13 +15,13 @@
       <p><strong>Cantidad:</strong> 1</p>
       <p><strong>Total:</strong> COP 45.000</p>
     </div>
-    <form action="pago_completado.php" method="POST">
+    <form action="payment_success.php" method="POST">
       <input type="text" placeholder="Nombre en la tarjeta" required>
       <input type="number" placeholder="Número de tarjeta" required>
       <input type="text" placeholder="Fecha de vencimiento (MM/AA)" required>
       <input type="number" placeholder="CVV" required>
       <button type="submit" class="realizar">Realizar pago</button>
-      <button type="button" class="cancelar" onclick="window.location.href='pago_cancelado.php'">Cancelar</button>
+      <button type="button" class="cancelar" onclick="window.location.href='payment_cancel.php'">Cancelar</button>
     </form>
   </div>
 </body>

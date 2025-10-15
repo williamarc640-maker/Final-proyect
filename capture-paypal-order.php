@@ -58,7 +58,7 @@ $capture_data = json_decode($capture_res, true);
 
 // Optionally: store capture info in DB payments table
 try {
-    require_once 'database.php';
+    require_once 'database/database.php';
     $db = Database::conectar();
     $db->exec("CREATE TABLE IF NOT EXISTS payments (
         id INT AUTO_INCREMENT PRIMARY KEY,

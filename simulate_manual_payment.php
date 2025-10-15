@@ -1,5 +1,5 @@
 <?php
-require_once 'database.php';
+require_once 'database/database.php';
 header('Content-Type: application/json');
 $input = json_decode(file_get_contents('php://input'), true);
 $method = $input['method'] ?? 'manual';

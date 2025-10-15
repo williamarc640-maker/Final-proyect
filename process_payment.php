@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'database.php';
+require_once 'database/database.php';
 
 $amount = isset($_POST['amount']) ? floatval($_POST['amount']) : 0;
 $method = isset($_POST['method']) ? $_POST['method'] : 'unknown';
@@ -46,15 +46,16 @@ try {
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>Resultado Pago</title></head><body>
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
 <main>
-  <h1>Resultado del pago</h1>
-  <p>Transacción: <strong><?php echo htmlspecialchars($transaction_id); ?></strong></p>
-  <p>Método: <strong><?php echo htmlspecialchars($method); ?></strong></p>
-  <p>Monto: <strong><?php echo htmlspecialchars(number_format($amount,2)); ?> COP</strong></p>
-  <p>Estado: <strong><?php echo htmlspecialchars($status); ?></strong></p>
-  <p>Si deseas integrar las pasarelas reales, abre <code>process_payment.php</code> y sigue los comentarios donde se indican los SDK/API.</p>
-  <a href="index.php">Volver</a>
+    <h1>Resultado del pago</h1>
+    <p>Transacción: <strong><?php echo htmlspecialchars($transaction_id); ?></strong></p>
+    <p>Método: <strong><?php echo htmlspecialchars($method); ?></strong></p>
+    <p>Monto: <strong><?php echo htmlspecialchars(number_format($amount,2)); ?> COP</strong></p>
+    <p>Estado: <strong><?php echo htmlspecialchars($status); ?></strong></p>
+    <!-- aca habia un <code> que no estaba haciendo nada, tonces lo intente arreglar -->
+    <p>Si deseas integrar las pasarelas reales, abre <code> <a href="process_payment.php">process_payment</a></code> y sigue los comentarios donde se indican los SDK/API.</p>
+    <a href="index.php">Volver</a>
 </main>
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
 </body></html>
