@@ -1,12 +1,12 @@
 <?php
-require_once 'producto.php';
-require_once 'categoria.php';
+require_once 'gestion/producto.php';
+require_once 'gestion/categoria.php';
 // clase producto controlador
 class ProductoControlador {
     public function listar() {
         $productos = Producto::obtenerTodo();
         $categorias = Categoria::obtenerTodo();
-        include 'productos_lista.php';
+        include 'listas/productos_lista.php';
     }
 // formulario para agregar o editar producto
     public function formulario($id = null) {
@@ -15,7 +15,7 @@ class ProductoControlador {
         if ($id) {
             $producto = Producto::obtenerPorId($id);
         }
-        include 'productos_formulario.php';
+        include 'formularios/productos_formulario.php';
     }
 // guardar producto (insertar o actualizar)
     public function guardar($dato) {

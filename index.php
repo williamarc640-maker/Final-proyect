@@ -1,9 +1,9 @@
 <?php
 // Controlador principal
 session_start();
-require_once 'usuariocontroller.php';
-require_once 'productocontroller.php';
-require_once 'categoriacontroller.php';
+require_once 'controllers/usuariocontroller.php';
+require_once 'controllers/productocontroller.php';
+require_once 'controllers/categoriacontroller.php';
 // Instanciar controladores
 $controlador = new Controlador();
 $productoControlador = new ProductoControlador();
@@ -13,7 +13,7 @@ $action = $_GET['action'] ?? '';
 $id = $_GET['id'] ?? null;
 // Si no hay sesión, muestra la portada
 if (!isset($_SESSION['usuario'])) {
-    include 'portada.php'; // Mueve el HTML de tu index.php actual a portada.php
+    include 'vistas/portada.php'; // Mueve el HTML de tu index.php actual a portada.php
     exit;
 }
 // Si es cliente, solo perfil y catálogo

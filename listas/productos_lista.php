@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- header -->
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
 <!-- lista de productos -->
 <h2>Productos</h2>
     <a href="index.php?action=producto_form">Agregar producto</a>
@@ -45,6 +45,6 @@
 </table>
 <br><br><br><br><br><br>
 <!--footer -->
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
 </body>
 </html>

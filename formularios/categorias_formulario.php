@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- header -->
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
 <!-- formulario para agregar o editar categoría -->
 <h2 style="text-align:center"><?= $categoria ? 'Editar' : 'Agregar' ?> Categoría</h2>
 <form class="form-categoria" action="index.php?action=categoria_guardar" method="post">
@@ -21,6 +21,6 @@
     <a href="index.php?action=categorias">Cancelar</a>
 </form>
 <!-- footer -->
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 // res.php - Registro de usuarios
-require_once 'database.php';
+require_once 'database/database.php';
 $mensaje = "";
 // Manejo del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -30,14 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- scripts -->
     <script src="archivesjs/ini.js"></script>
     <!-- estilos -->
-    <link rel="stylesheet" href="styles/ini.css">
+    <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
 <!-- header -->
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
         <main>
 <!-- formulario de registro -->
             <section class="auth-form">
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </section>
         </main>
 <!-- footer -->
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
     </div>
     <div id="notification" class="notification"></div>
 </body>

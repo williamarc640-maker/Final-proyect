@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- header -->
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
 <h2>Categorías</h2>
 <a href="index.php?action=categoria_form">Agregar categoría</a>
 <!-- tabla de categorias -->
@@ -39,6 +39,6 @@
 </table>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!--footer -->
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
 </body>
 </html>

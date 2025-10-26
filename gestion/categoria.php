@@ -1,5 +1,5 @@
 <?php
-require_once 'database.php';
+require_once 'database/database.php';
 /* clase categoria */
 class Categoria {
     public static function obtenerTodo() {

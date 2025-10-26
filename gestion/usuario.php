@@ -1,5 +1,5 @@
 <?php
-require_once 'database.php';
+require_once 'database/database.php';
 /* modelo de usuario */
 class Usuario {
 /* obtener todos los usuarios */

@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- header -->
-    <?php include 'header.php'; ?>
+    <?php include 'inc/header.php'; ?>
     <!-- Detalle de usuario -->
     <h2>Detalle de Usuario</h2>
     <div class="detalle-container">
@@ -31,6 +31,6 @@
         <a href="index.php" class="volver">Volver</a>
     </div>
     <!-- footer -->
-    <?php include 'footer.php'; ?>
+    <?php include 'inc/footer.php'; ?>
 </body>
 </html>

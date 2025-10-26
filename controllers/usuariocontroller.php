@@ -1,16 +1,16 @@
 <?php
 /* usuariocontroller.php */
-require_once 'usuario.php';
+require_once 'gestion/usuario.php';
 class Controlador {
 /* listar todos los usuarios */
     public function listar() {
         $usuarios = Usuario::obtenerTodo();
-        include 'lista.php';
+        include 'listas/usuarios_lista.php';
     }
 /* ver detalle de un usuario */
     public function detalle($id) {
         $usuario = Usuario::obtenerPorId($id);
-        include 'detalle.php';
+        include 'vistas/detalle.php';
     }
 /* mostrar formulario para crear o editar usuario */
     public function formulario($id = null) {
@@ -23,7 +23,7 @@ class Controlador {
                 exit;
             }
         }
-        include 'formularios.php';
+        include 'formularios/usuarios_formularios.php';
     }
 /* guardar usuario (crear o actualizar) */
     public function guardar($dato) {
@@ -75,7 +75,7 @@ class Controlador {
 /* mostrar datos del cliente */
     public function perfilCliente() {
         $usuario = Usuario::obtenerPorId($_SESSION['id']);
-        include 'perfil_cliente.php';
+        include 'vistas/perfil_cliente.php';
     }
 /* actualizar datos del cliente */
     public function actualizarCliente($dato) {
