@@ -80,7 +80,11 @@
 </head>
 <body>
     <!-- header -->
-<?php include 'inc/header.php'; ?>
+<?php 
+include 'inc/header.php';
+require_once 'database/database.php';
+$conexion = Database::conectar();
+?>
 <!-- lista de productos -->
     <div class="print-header" style="display: none;">
         <h1>Lista de Productos</h1>
@@ -122,7 +126,44 @@
     </tr>
     <?php endforeach; ?>
 </table>
-<br><br><br><br><br><br>
+<!-- Registro de actividades -->
+<?php if ($_SESSION['rol'] === 'admin'): ?>
+<div class="no-print">
+    <h3>Registro de Actividades</h3>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Fecha y Hora</th>
+            <th>Acción</th>
+            <th>Producto</th>
+            <th>Detalles</th>
+            <th>Modificado por</th>
+        </tr>
+        <?php
+        // Obtener registros de actividad
+        $query = "SELECT r.*, 
+                 CONCAT(u.usuario_nombre, ' ', u.usuario_apellido) as modificado_por_nombre
+                 FROM registro_productos r 
+                 LEFT JOIN usuarios u ON r.modificado_por = u.usuario_id
+                 ORDER BY r.fecha_hora DESC
+                 LIMIT 10";
+        $stmt = $conexion->prepare($query);
+        $stmt->execute();
+        $registros = $stmt->fetchAll(PDO::FETCH_OBJ);
+        
+        foreach ($registros as $r): ?>
+        <tr>
+            <td><?= htmlspecialchars($r->fecha_hora) ?></td>
+            <td><?= htmlspecialchars($r->accion) ?></td>
+            <td><?= htmlspecialchars($r->producto_nombre) ?></td>
+            <td><?= htmlspecialchars($r->descripcion) ?></td>
+            <td><?= htmlspecialchars($r->modificado_por_nombre) ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
+<?php endif; ?>
+
+<br><br><br>
 <!--footer -->
 <?php include 'inc/footer.php'; ?>
 </body>
