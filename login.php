@@ -3,7 +3,7 @@ require_once 'database/database.php';
 // Inicio de sesion
 session_start();
 $mensaje = "";
-
+// Redirigir si ya ha iniciado sesion
 if (isset($_SESSION['usuario'])) {
     header("Location: index.php");
     exit;
@@ -13,7 +13,7 @@ if (isset($_SESSION['usuario'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['usuario'] ?? '';
     $clave = $_POST['clave'] ?? '';
-    
+    // Conectar a la base de datos
     $db = Database::conectar();
     $stmt = $db->prepare("SELECT * FROM usuarios WHERE usuario_usuario = ?");
     $stmt->execute([$usuario]);
@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- metadatos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>© SummerWooll - Inicio de sesion</title>
@@ -72,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- footer -->
 <?php include 'inc/footer.php'; ?>
     </div>
+    <!-- notification -->
     <div id="notification" class="notification"></div>
 </body>
 </html>

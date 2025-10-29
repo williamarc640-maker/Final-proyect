@@ -5,13 +5,13 @@ require_once 'database/database.php';
 require_once 'PHPMailer/PHPMailer.php';
 require_once 'PHPMailer/SMTP.php';
 require_once 'PHPMailer/Exception.php';
-
+// Usar las clases de PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
+// Inicializar variables
 $mensaje = "";
 $tipo_mensaje = "error";
-
+// Manejo del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['usuario_nombre'] ?? '';
     $apellido = $_POST['usuario_apellido'] ?? '';
@@ -19,16 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['usuario_email'] ?? '';
     $clave = $_POST['usuario_clave'] ?? '';
     $confirmar = $_POST['confirmar_clave'] ?? '';
-    
+    // Validar contraseñas
     if ($clave !== $confirmar) {
         $mensaje = "Las contraseñas no coinciden.";
     } else {
         $db = Database::conectar();
-        
         // Verificar si el usuario ya existe
         $stmt = $db->prepare("SELECT usuario_id FROM usuarios WHERE usuario_usuario = ? OR usuario_email = ?");
         $stmt->execute([$usuario, $email]);
-        
+        // Si ya existe, mostrar mensaje de error
         if ($stmt->fetch()) {
             $mensaje = "El usuario o email ya está registrado.";
         } else {
@@ -42,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'email' => $email,
                 'clave' => password_hash($clave, PASSWORD_DEFAULT)
             ];
-            
             // Enviar email
             $mail = new PHPMailer(true);
             try {
@@ -51,15 +49,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'summerwoollenterprises@gmail.com';
-                // $mail->Password = 'your_app_password_here'; // Usa una contraseña de aplicación
+                $mail->Password = 'CONTRASEÑA'; // Usa una contraseña de aplicación
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
-                
                 // Configuración del email
                 $mail->setFrom('summerwoollenterprises@gmail.com', 'SummerWooll');
                 $mail->addAddress($email, $nombre);
                 $mail->CharSet = 'UTF-8';
-                
                 // Contenido
                 $mail->isHTML(true);
                 $mail->Subject = 'Código de Verificación - SummerWooll';
@@ -71,16 +67,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p>Ingresa este código para completar tu registro.</p>
                     <p>El código expira en 10 minutos.</p>
                 ";
-                
+                // Enviar el email
                 $mail->send();
-                
                 // Guardar tiempo de expiración (10 minutos)
                 $_SESSION['codigo_expira'] = time() + 600;
-                
                 // Redirigir a la página de verificación
                 header("Location: verificar.php");
                 exit;
-                
+                // Mensaje de error si falla el envío
             } catch (Exception $e) {
                 $mensaje = "Error al enviar el email: {$mail->ErrorInfo}";
             }
@@ -89,8 +83,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    <!-- metadatos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>© SummerWooll - Registro</title>
@@ -145,6 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- footer -->
 <?php include 'inc/footer.php'; ?>
     </div>
+    <!-- notification -->
     <div id="notification" class="notification"></div>
 </body>
 </html>
