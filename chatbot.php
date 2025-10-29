@@ -9,7 +9,7 @@ if (!$msg) {
     exit;
 }
 
-/*aca va el api de openai*/
+/* api del chatbot */
 
 if ($openai_key && $openai_key !== '' && $openai_key !== 'sk-REPLACE_WITH_YOUR_OPENAI_KEY') {
 
