@@ -6,12 +6,87 @@
     <!-- estilos -->
     <link rel="stylesheet" href="styles/lista.css">
     <link rel="stylesheet" href="styles/header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @media print {
+            .no-print, header, footer, nav, 
+            td:last-child, th:last-child { 
+                display: none !important; 
+            }
+            body { 
+                margin: 20px;
+                padding: 0;
+                background: white;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                background: white;
+                page-break-inside: auto;
+            }
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+            th {
+                background-color: #f3f4f6 !important;
+                color: #000;
+                padding: 12px;
+                border: 1px solid #000;
+                font-size: 14px;
+            }
+            td {
+                padding: 10px;
+                border: 1px solid #000;
+                font-size: 13px;
+            }
+            .print-header {
+                text-align: center;
+                margin-bottom: 30px;
+                padding: 20px;
+                border-bottom: 2px solid #000;
+                display: block !important;
+            }
+            .print-header h1 {
+                color: #000;
+                margin: 0;
+                font-size: 24px;
+            }
+            .print-header p {
+                color: #333;
+                margin: 5px 0;
+                font-size: 14px;
+            }
+        }
+        .btn-print {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+        .btn-print:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <!-- header -->
 <?php include 'inc/header.php'; ?>
-<h2>Categorías</h2>
-<a href="index.php?action=categoria_form">Agregar categoría</a>
+    <div class="print-header" style="display: none;">
+        <h1>Lista de Categorías</h1>
+        <p>Generado el: <?php echo date('d/m/Y H:i'); ?></p>
+        <p>Sistema de Gestión de Categorías</p>
+    </div>
+    <h2 class="no-print">Categorías</h2>
+    <button onclick="window.print();" class="btn-print no-print">
+        <i class="fas fa-print"></i> Imprimir Lista
+    </button>
+    <a href="index.php?action=categoria_form" class="no-print">Agregar categoría</a>
 <!-- tabla de categorias -->
 <table border="1" cellpadding="5">
     <tr>

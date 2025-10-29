@@ -7,11 +7,92 @@
     <link rel="stylesheet" href="styles/lista.css">
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @media print {
+            .no-print, 
+            header, 
+            footer, 
+            nav,
+            td:last-child, 
+            th:last-child,
+            #chatbot-widget { 
+                display: none !important; 
+            }
+            body { 
+                margin: 20px;
+                padding: 0;
+                background: white;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                background: white;
+                page-break-inside: auto;
+            }
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+            th {
+                background-color: #f3f4f6 !important;
+                color: #000;
+                padding: 12px;
+                border: 1px solid #000;
+                font-size: 14px;
+            }
+            td {
+                padding: 10px;
+                border: 1px solid #000;
+                font-size: 13px;
+            }
+            h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #000;
+            }
+            .print-header {
+                text-align: center;
+                margin-bottom: 30px;
+                padding: 20px;
+                border-bottom: 2px solid #000;
+                display: block !important;
+            }
+            .print-header h1 {
+                color: #000;
+                margin: 0;
+                font-size: 24px;
+            }
+            .print-header p {
+                color: #333;
+                margin: 5px 0;
+                font-size: 14px;
+            }
+            table tr:nth-child(even) {
+                background-color: #f9f9f9 !important;
+            }
+        }
+        .btn-print {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+        .btn-print:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <!-- header -->
 <?php include 'inc/header.php'?>
 <body>
-    <h2>Listado de usuarios</h2>
+    <div class="no-print">
+        <h2>Listado de usuarios</h2>
+    </div>
     <!-- agregar usuario -->
     <?php if ($_SESSION['rol'] === 'admin' || $_SESSION['rol'] === 'empleado'): ?>
         <a href="index.php?action=formulario">Agregar usuario</a> |
@@ -55,6 +136,21 @@
     <?php else: ?>
         <p>No hay usuarios registrados.</p>
     <?php endif; ?> 
+
+    <!-- Botón de impresión -->
+    <div class="no-print" style="text-align: center;">
+        <button class="btn-print" onclick="window.print()">
+            <i class="fas fa-print"></i> Imprimir Lista de Usuarios
+        </button>
+    </div>
+
+    <!-- Información adicional para la versión impresa -->
+    <div class="print-header" style="display: none;">
+        <h1>© SummerWooll</h1>
+        <p>Reporte de Usuarios</p>
+        <p>Fecha de impresión: <?php echo date('d/m/Y H:i:s'); ?></p>
+    </div>
+
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!-- footer -->
     <?php include 'inc/footer.php'; ?>
