@@ -3,19 +3,24 @@ require_once 'database/database.php';
 // Inicio de sesion
 session_start();
 $mensaje = "";
+
 if (isset($_SESSION['usuario'])) {
     header("Location: index.php");
     exit;
 }
+
 // Manejo del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['usuario'] ?? '';
     $clave = $_POST['clave'] ?? '';
+    
     $db = Database::conectar();
-    $stmt = $db->prepare("SELECT * FROM usuarios WHERE usuario_usuario = ? AND usuario_clave = ?");
-    $stmt->execute([$usuario, $clave]);
+    $stmt = $db->prepare("SELECT * FROM usuarios WHERE usuario_usuario = ?");
+    $stmt->execute([$usuario]);
     $user = $stmt->fetch(PDO::FETCH_OBJ);
-    if ($user) {
+    
+    // Verificar contraseña encriptada
+    if ($user && password_verify($clave, $user->usuario_clave)) {
         $_SESSION['usuario'] = $user->usuario_usuario;
         $_SESSION['rol'] = $user->rol;
         $_SESSION['id'] = $user->usuario_id;

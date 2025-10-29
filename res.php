@@ -1,8 +1,17 @@
 <?php
-// res.php - Registro de usuarios
+// res.php - Registro con verificación por email
+session_start(); // IMPORTANTE: Debe estar al principio
 require_once 'database/database.php';
+require_once 'PHPMailer/PHPMailer.php';
+require_once 'PHPMailer/SMTP.php';
+require_once 'PHPMailer/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 $mensaje = "";
-// Manejo del formulario
+$tipo_mensaje = "error";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['usuario_nombre'] ?? '';
     $apellido = $_POST['usuario_apellido'] ?? '';
@@ -10,14 +19,72 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['usuario_email'] ?? '';
     $clave = $_POST['usuario_clave'] ?? '';
     $confirmar = $_POST['confirmar_clave'] ?? '';
+    
     if ($clave !== $confirmar) {
         $mensaje = "Las contraseñas no coinciden.";
     } else {
-        // Insertar nuevo usuario con rol 'cliente'
         $db = Database::conectar();
-        $stmt = $db->prepare("INSERT INTO usuarios (usuario_nombre, usuario_apellido, usuario_usuario, usuario_email, usuario_clave, rol) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$nombre, $apellido, $usuario, $email, $clave, 'cliente']);
-        $mensaje = "Usuario registrado correctamente. <a href='login.php'>Inicia sesión aquí</a>";
+        
+        // Verificar si el usuario ya existe
+        $stmt = $db->prepare("SELECT usuario_id FROM usuarios WHERE usuario_usuario = ? OR usuario_email = ?");
+        $stmt->execute([$usuario, $email]);
+        
+        if ($stmt->fetch()) {
+            $mensaje = "El usuario o email ya está registrado.";
+        } else {
+            // Generar código de verificación de 6 dígitos
+            $codigo = rand(100000, 999999);
+            $_SESSION['codigo_verificacion'] = $codigo;
+            $_SESSION['datos_registro'] = [
+                'nombre' => $nombre,
+                'apellido' => $apellido,
+                'usuario' => $usuario,
+                'email' => $email,
+                'clave' => password_hash($clave, PASSWORD_DEFAULT)
+            ];
+            
+            // Enviar email
+            $mail = new PHPMailer(true);
+            try {
+                // Configuración del servidor
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'summerwoollenterprises@gmail.com';
+                // $mail->Password = 'your_app_password_here'; // Usa una contraseña de aplicación
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
+                
+                // Configuración del email
+                $mail->setFrom('summerwoollenterprises@gmail.com', 'SummerWooll');
+                $mail->addAddress($email, $nombre);
+                $mail->CharSet = 'UTF-8';
+                
+                // Contenido
+                $mail->isHTML(true);
+                $mail->Subject = 'Código de Verificación - SummerWooll';
+                $mail->Body = "
+                    <h2>Bienvenido a SummerWooll</h2>
+                    <p>Hola <strong>$nombre</strong>,</p>
+                    <p>Tu código de verificación es:</p>
+                    <h1 style='color: #4CAF50; font-size: 36px;'>$codigo</h1>
+                    <p>Ingresa este código para completar tu registro.</p>
+                    <p>El código expira en 10 minutos.</p>
+                ";
+                
+                $mail->send();
+                
+                // Guardar tiempo de expiración (10 minutos)
+                $_SESSION['codigo_expira'] = time() + 600;
+                
+                // Redirigir a la página de verificación
+                header("Location: verificar.php");
+                exit;
+                
+            } catch (Exception $e) {
+                $mensaje = "Error al enviar el email: {$mail->ErrorInfo}";
+            }
+        }
     }
 }
 ?>
