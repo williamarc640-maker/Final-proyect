@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/lista.css">
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- estilos para impresión  si lo quito no agarra el estilo-->
     <style>
         @media print {
             .no-print, header, footer, nav,
@@ -110,6 +111,7 @@ $conexion = Database::conectar();
     <!-- recorrer productos -->
     <?php foreach ($productos as $p): ?>
     <tr>
+        <!-- mostrar datos del producto -->
         <td><?= htmlspecialchars($p->producto_id) ?></td>
         <td><?= htmlspecialchars($p->producto_codigo) ?></td>
         <td><?= htmlspecialchars($p->producto_nombre) ?></td>
@@ -141,15 +143,15 @@ $conexion = Database::conectar();
         <?php
         // Obtener registros de actividad
         $query = "SELECT r.*, 
-                 CONCAT(u.usuario_nombre, ' ', u.usuario_apellido) as modificado_por_nombre
-                 FROM registro_productos r 
-                 LEFT JOIN usuarios u ON r.modificado_por = u.usuario_id
-                 ORDER BY r.fecha_hora DESC
-                 LIMIT 10";
+                CONCAT(u.usuario_nombre, ' ', u.usuario_apellido) as modificado_por_nombre
+                FROM registro_productos r 
+                LEFT JOIN usuarios u ON r.modificado_por = u.usuario_id
+                ORDER BY r.fecha_hora DESC
+                LIMIT 10";
         $stmt = $conexion->prepare($query);
         $stmt->execute();
         $registros = $stmt->fetchAll(PDO::FETCH_OBJ);
-        
+        // Mostrar registros
         foreach ($registros as $r): ?>
         <tr>
             <td><?= htmlspecialchars($r->fecha_hora) ?></td>
@@ -162,7 +164,7 @@ $conexion = Database::conectar();
     </table>
 </div>
 <?php endif; ?>
-
+<!-- para alejar el footer -->
 <br><br><br>
 <!--footer -->
 <?php include 'inc/footer.php'; ?>

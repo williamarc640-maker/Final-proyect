@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/lista.css">
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- estilos para impresión  si lo quito no agarra el estilo-->
     <style>
         @media print {
             .no-print, header, footer, nav, 
@@ -81,6 +82,7 @@ include 'inc/header.php';
 require_once 'database/database.php';
 $conexion = Database::conectar();
 ?>
+<!-- obtener categorias -->
     <div class="print-header" style="display: none;">
         <h1>Lista de Categorías</h1>
         <p>Generado el: <?php echo date('d/m/Y H:i'); ?></p>
@@ -132,17 +134,18 @@ $conexion = Database::conectar();
         <?php
         // Obtener registros de actividad
         $query = "SELECT r.*, 
-                 CONCAT(u.usuario_nombre, ' ', u.usuario_apellido) as modificado_por_nombre
-                 FROM registro_categorias r 
-                 LEFT JOIN usuarios u ON r.modificado_por = u.usuario_id
-                 ORDER BY r.fecha_hora DESC
-                 LIMIT 10";
+                CONCAT(u.usuario_nombre, ' ', u.usuario_apellido) as modificado_por_nombre
+                FROM registro_categorias r 
+                LEFT JOIN usuarios u ON r.modificado_por = u.usuario_id
+                ORDER BY r.fecha_hora DESC
+                LIMIT 10";
         $stmt = $conexion->prepare($query);
         $stmt->execute();
         $registros = $stmt->fetchAll(PDO::FETCH_OBJ);
-        
+        // Mostrar registros
         foreach ($registros as $r): ?>
         <tr>
+            <!-- mostrar datos del registro -->
             <td><?= htmlspecialchars($r->fecha_hora) ?></td>
             <td><?= htmlspecialchars($r->accion) ?></td>
             <td><?= htmlspecialchars($r->categoria_nombre) ?></td>
@@ -154,7 +157,7 @@ $conexion = Database::conectar();
     </table>
 </div>
 <?php endif; ?>
-
+<!-- para alejar el footer -->
 <br><br><br>
 <!--footer -->
 <?php include 'inc/footer.php'; ?>

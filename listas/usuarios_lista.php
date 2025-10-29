@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/lista.css">
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- estilos para impresión  si lo quito no agarra el estilo-->
     <style>
         @media print {
             .no-print, 
@@ -97,12 +98,14 @@ $conexion = Database::conectar();
     <div class="no-print">
         <h2>Listado de usuarios</h2>
     </div>
+        <!-- Botón de impresión -->
+    <button onclick="window.print();" class="btn-print no-print">
+        <i class="fas fa-print"></i> Imprimir Lista
+    </button>
     <!-- agregar usuario -->
     <?php if ($_SESSION['rol'] === 'admin' || $_SESSION['rol'] === 'empleado'): ?>
-        <a href="index.php?action=formulario">Agregar usuario</a> |
+        <a href="index.php?action=formulario">Agregar usuario</a>
     <?php endif; ?>
-    <a href="logout.php">Cerrar sesión</a>
-    <br><br>
     <!-- tabla de usuarios -->
     <?php if (isset($usuarios) && is_array($usuarios) && count($usuarios) > 0): ?>
         <table border="1" cellpadding="5">
@@ -118,6 +121,7 @@ $conexion = Database::conectar();
             </tr>
             <?php foreach ($usuarios as $u): ?>
             <tr>
+                <!-- mostrar datos del usuario -->
                 <td><?= htmlspecialchars($u->usuario_id) ?></td>
                 <td><?= htmlspecialchars($u->usuario_nombre) ?></td>
                 <td><?= htmlspecialchars($u->usuario_apellido) ?></td>
@@ -126,6 +130,7 @@ $conexion = Database::conectar();
                 <td><?= htmlspecialchars($u->usuario_clave) ?></td>
                 <td><?= htmlspecialchars($u->rol) ?></td>
                 <td>
+                    <!-- acciones -->
                     <a href="index.php?action=detalle&id=<?= $u->usuario_id ?>">Ver</a> | 
                     <a href="index.php?action=formulario&id=<?= $u->usuario_id ?>">Editar</a>
                     <?php if ($_SESSION['rol'] === 'admin'): ?>
@@ -140,21 +145,12 @@ $conexion = Database::conectar();
     <?php else: ?>
         <p>No hay usuarios registrados.</p>
     <?php endif; ?> 
-
-    <!-- Botón de impresión -->
-    <div class="no-print" style="text-align: center;">
-        <button class="btn-print" onclick="window.print()">
-            <i class="fas fa-print"></i> Imprimir Lista de Usuarios
-        </button>
-    </div>
-
     <!-- Información adicional para la versión impresa -->
     <div class="print-header" style="display: none;">
         <h1>© SummerWooll</h1>
         <p>Reporte de Usuarios</p>
         <p>Fecha de impresión: <?php echo date('d/m/Y H:i:s'); ?></p>
     </div>
-
     <!-- Registro de actividades -->
     <?php if ($_SESSION['rol'] === 'admin'): ?>
     <div class="no-print">
@@ -170,13 +166,13 @@ $conexion = Database::conectar();
             <?php
             // Obtener registros de actividad
             $query = "SELECT r.*, 
-                     CONCAT(u.usuario_nombre, ' ', u.usuario_apellido) as nombre_usuario,
-                     CONCAT(m.usuario_nombre, ' ', m.usuario_apellido) as modificado_por_nombre
-                     FROM registro_usuarios r 
-                     LEFT JOIN usuarios u ON r.usuario_id = u.usuario_id
-                     LEFT JOIN usuarios m ON r.modificado_por = m.usuario_id
-                     ORDER BY r.fecha_hora DESC
-                     LIMIT 10";
+                    CONCAT(u.usuario_nombre, ' ', u.usuario_apellido) as nombre_usuario,
+                    CONCAT(m.usuario_nombre, ' ', m.usuario_apellido) as modificado_por_nombre
+                    FROM registro_usuarios r 
+                    LEFT JOIN usuarios u ON r.usuario_id = u.usuario_id
+                    LEFT JOIN usuarios m ON r.modificado_por = m.usuario_id
+                    ORDER BY r.fecha_hora DESC
+                    LIMIT 10";
             $stmt = $conexion->prepare($query);
             $stmt->execute();
             $registros = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -193,7 +189,7 @@ $conexion = Database::conectar();
         </table>
     </div>
     <?php endif; ?>
-
+<!-- para alejar el footer -->
     <br><br><br><br>
 <!-- footer -->
     <?php include 'inc/footer.php'; ?>
