@@ -73,6 +73,14 @@
         .btn-print:hover {
             background-color: #0056b3;
         }
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +90,9 @@ include 'inc/header.php';
 require_once 'database/database.php';
 $conexion = Database::conectar();
 ?>
+<?php if (!empty($_GET['error'])): ?>
+    <div class="alert-error no-print"><?php echo htmlspecialchars(urldecode($_GET['error'])); ?></div>
+<?php endif; ?>
 <!-- obtener categorias -->
     <div class="print-header" style="display: none;">
         <h1>Lista de Categorías</h1>

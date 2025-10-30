@@ -26,7 +26,13 @@ class CategoriaControlador {
     }
 /* eliminar categoria */
     public function eliminar($id) {
-        Categoria::eliminar($id);
+        $ok = Categoria::eliminar($id);
+        if (!$ok) {
+            $errorMsg = Categoria::getUltimoError() ?: 'No se pudo eliminar la categoría.';
+            $error = urlencode($errorMsg);
+            header("Location: index.php?action=categorias&error={$error}");
+            exit;
+        }
         header("Location: index.php?action=categorias");
         exit;
     }

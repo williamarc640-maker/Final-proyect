@@ -1,18 +1,66 @@
 <?php
-// Configuration file for sensitive keys.
-// IMPORTANT: Do NOT commit this file to a public repository.
+// ==========================================
+// CONFIGURACIÓN GENERAL DEL PROYECTO
+// ==========================================
 
-// PayPal sandbox credentials
-define('PAYPAL_CLIENT_ID', 'TU_PAYPAL_SANDBOX_CLIENT_ID');
-define('PAYPAL_SECRET', 'TU_PAYPAL_SANDBOX_SECRET');
+// Habilitar errores solo en desarrollo (comenta estas 3 líneas en producción)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-// OpenAI key for chatbot advanced responses (GPT-4o)
-define('OPENAI_API_KEY', 'sk-REPLACE_WITH_YOUR_OPENAI_KEY');
+// ==========================================
+// 1) CLAVES DE STRIPE - MODO REAL
+// ==========================================
+// 🔑 Coloca aquí tus claves reales de Stripe (desde tu dashboard)
+/*codigo que no se puede subir en github*/
 
-// PayPal environment: sandbox or live
-define('PAYPAL_ENV', 'sandbox'); // change to 'live' in production
+// ==========================================
+// 2) CONEXIÓN A LA BASE DE DATOS
+// ==========================================
+$host   = "localhost";
+$user   = "root";      // cámbialo si tu hosting usa otro usuario
+$pass   = "";          // coloca tu contraseña si la hay
+$dbname = "mvc_crud"; // nombre de tu base de datos
 
-function get_paypal_base() {
-    return (PAYPAL_ENV === 'live') ? 'https://api-m.paypal.com' : 'https://api-m.sandbox.paypal.com';
+$conn = new mysqli($host, $user, $pass, $dbname);
+if ($conn->connect_error) {
+    die("Error en la conexión a la base de datos: " . $conn->connect_error);
+}
+
+// ==========================================
+// 3) CARGAR STRIPE (VÍA COMPOSER)
+// ==========================================
+$vendorAutoload = __DIR__ . '/vendor/autoload.php';
+if (file_exists($vendorAutoload)) {
+    require_once $vendorAutoload;
+} else {
+    die("❌ No se encontró 'vendor/autoload.php'. Ejecuta en tu terminal: composer require stripe/stripe-php");
+}
+
+// ==========================================
+// 4) INICIALIZAR STRIPE
+// ==========================================
+try {
+    \Stripe\Stripe::setApiKey($stripe_secret_key);
+} catch (Exception $e) {
+    die("Error al inicializar Stripe: " . $e->getMessage());
+}
+
+// ==========================================
+// 5) OPCIONAL: FUNCIONES ÚTILES
+// ==========================================
+
+// Verificar conexión rápida
+function db_check() {
+    global $conn;
+    return $conn->ping();
+}
+
+// Formato básico de respuesta JSON
+function json_response($data) {
+    header('Content-Type: application/json');
+    echo json_encode($data);
+    exit;
 }
 ?>
+

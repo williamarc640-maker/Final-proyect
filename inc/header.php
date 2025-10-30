@@ -1,7 +1,7 @@
 <!-- header.php -->
 <header>
     <nav>
-        <img src="img/icono-SW.png" alt="Logo" class="nav-logo">
+        <img src="./inc/icono-SW.png" alt="Logo" class="nav-logo">
         <div class="logo" title="© SummerWooll" >© SummerWooll</div>
         <ul>
 <!-- enlaces de navegacion -->

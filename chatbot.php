@@ -9,7 +9,7 @@ if (!$msg) {
     exit;
 }
 
-/* api del chatbot */
+/*codigo que no se puede subir en github*/
 
 if ($openai_key && $openai_key !== '' && $openai_key !== 'sk-REPLACE_WITH_YOUR_OPENAI_KEY') {
 

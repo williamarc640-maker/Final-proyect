@@ -4,7 +4,8 @@ require_once 'database/database.php';
 class Producto {
     public static function obtenerTodo() {
         $db = Database::conectar();
-        $stmt = $db->query("SELECT p.*, c.categoria_nombre FROM producto p JOIN categoria c ON p.categoria_id = c.categoria_id");
+        // LEFT JOIN para incluir productos sin categoría (categoria_id NULL)
+        $stmt = $db->query("SELECT p.*, COALESCE(c.categoria_nombre, '') AS categoria_nombre FROM producto p LEFT JOIN categoria c ON p.categoria_id = c.categoria_id");
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 // obtener un producto por su id

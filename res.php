@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'summerwoollenterprises@gmail.com';
-                $mail->Password = 'CONTRASEÑA'; // Usa una contraseña de aplicación
+                $mail->Password = 'codigo-que-no-se-puede-subir-en-github'; // Usa una contraseña de aplicación
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
                 // Configuración del email
