@@ -51,23 +51,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <main>
 <!-- formulario de inicio de sesion -->
             <section class="auth-form">
-                <h1>Bienvenido</h1>
+                <h1 title="Bienvenido">Bienvenido</h1>
                 <!-- Mostrar mensaje de error si existe -->
     <?php if ($mensaje): ?>
         <p style="color:red;"><?= $mensaje ?></p>
     <?php endif; ?>
     <form id="login-form" method="post">
         <div class="form-group">
-        <label for="usuario">Usuario:</label>
+        <label for="usuario" title="Usuario:">Usuario:</label>
         <input type="text" id="usuario" name="usuario" required>
         </div>
         <div class="form-group">
-        <label for="clave">Contraseña:</label>
+        <label for="clave" title="Contraseña:" >Contraseña:</label>
         <input type="password" id="clave" name="clave" required><br><br>
         </div>
-        <button type="submit" class="btn">Iniciar sesion</button>
+        <button type="submit" class="btn" title="Iniciar sesion">Iniciar sesion</button>
     </form>
-                <p class="form-footer">¿No tienes cuenta? <a href="res.php">Registrate aca</a></p>
+                <p class="form-footer" title="¿No tienes cuenta?">¿No tienes cuenta? <a href="res.php" title="Registrate aca">Registrate aca</a></p>
             </section>
         </main>
 <!-- footer -->

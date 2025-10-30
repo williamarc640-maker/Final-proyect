@@ -23,34 +23,35 @@ $productos = Producto::obtenerTodo();
 <body>
 <!-- header -->
 <?php include 'inc/header.php'; ?>
+<br><br>
 <main>
     <section id="catalog" class="catalog">
-        <h1>Nuestro catálogo</h1>
+        <h1 title="Nuestro catálogo">Nuestro catálogo</h1>
         <div class="product-grid" id="product-grid">
 <!-- Los productos se renderizan por JS -->
         </div>
     </section>
     <section id="cart" class="cart">
-        <h2>Carrito de compra</h2>
+        <h2 title="Carrito de compra">Carrito de compra</h2>
         <div id="cart-items"></div>
         <div class="cart-total">
-            <strong>Total: COP <span id="cart-total">0.00</span></strong>
+            <strong>Total: <span id="cart-total">0.00</span> COP</strong>
         </div>
-        <button id="checkout-btn" class="btn">Comprar</button>
+        <button id="checkout-btn" class="btn" title="Comprar">Comprar</button>
     </section>
 </main>
 <!-- notificacion -->
 <div id="notification" class="notification"></div>
 <!-- Modal de detalles del producto -->
-<div id="product-modal" class="modal" style="display:none;">
+<div id="product-modal" class="modal" style="display:none;" title="producto">
     <div class="modal-content">
         <span class="close-modal" id="close-modal">&times;</span>
-        <img id="modal-image" src="" alt="" class="modal-image">
-        <h3 id="modal-title"></h3>
-        <p id="modal-category"></p>
-        <p id="modal-price"></p>
-        <p id="modal-stock"></p>
-        <button id="modal-add-cart" class="btn">Añadir al Carrito</button>
+        <img id="modal-image" src="" alt="imagen" class="modal-image">
+        <h3 id="modal-title" title="titulo"></h3>
+        <p id="modal-category" title="categoria"></p>
+        <p id="modal-price" title="precio"></p>
+        <p id="modal-stock" title="stock"></p>
+        <button id="modal-add-cart" class="btn" title="Añadir al Carrito">Añadir al Carrito</button>
     </div>
 </div>
 <!-- footer -->
@@ -124,16 +125,6 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 </script>
-
-
-<!-- PAY BUTTON: calcula total y envía a payment.php -->
-<div style="margin:20px 0;">
-    <form id="pay-form" action="payment.php" method="post">
-        <input type="hidden" name="total" id="hidden-total" value="">
-        <button type="button" id="pay-with-cart" class="btn-pay">Pagar</button>
-    </form>
-</div>
-
 <script>
 function parsePrice(text){
   // extrae números de formato como 12.345,67 o 12345.67

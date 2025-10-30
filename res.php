@@ -103,35 +103,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <main>
 <!-- formulario de registro -->
             <section class="auth-form">
-                <h1>Crear Cuenta</h1>
+                <h1 title="Crear Cuenta">Crear Cuenta</h1>
                 <form id="register-form" method="post">
                     <div class="form-group">
-                        <label for="usuario_nombre">Nombre</label>
+                        <label for="usuario_nombre" title="Nombre">Nombre</label>
                         <input type="text" id="usuario_nombre" name="usuario_nombre" required>
                     </div>
                     <div class="form-group">
-                        <label for="usuario_apellido">Apellido</label>
+                        <label for="usuario_apellido" title="Apellido">Apellido</label>
                         <input type="text" id="usuario_apellido" name="usuario_apellido" required>
                     </div>
                     <div class="form-group">
-                        <label for="usuario_usuario">Nombre de Usuario</label>
+                        <label for="usuario_usuario" title="Nombre de Usuario">Nombre de Usuario</label>
                         <input type="text" id="usuario_usuario" name="usuario_usuario" required>
                     </div>
                     <div class="form-group">
-                        <label for="usuario_email">Correo Electrónico</label>
+                        <label for="usuario_email" title="Correo Electrónico">Correo Electrónico</label>
                         <input type="email" id="usuario_email" name="usuario_email" required>
                     </div>
-                    <div class="form-group">sip
-                        <label for="usuario_clave">Contraseña</label>
+                    <div class="form-group">
+                        <label for="usuario_clave" title="Contraseña">Contraseña</label>
                         <input type="password" id="usuario_clave" name="usuario_clave" required>
                     </div>
                     <div class="form-group">
-                        <label for="confirmar_clave">Confirmar Contraseña</label>
+                        <label for="confirmar_clave" title="Confirmar Contraseña" >Confirmar Contraseña</label>
                         <input type="password" id="confirmar_clave" name="confirmar_clave" required>
                     </div>
-                    <button type="submit" class="btn">Registrar</button>
+                    <button type="submit" class="btn" title="Registrar" >Registrar</button>
                 </form>
-                <p class="form-footer">¿Ya Tienes Cuenta? <a href="login.php">Inicia Sesion aca</a></p>
+                <p class="form-footer" title="¿Ya Tienes Cuenta?" >¿Ya Tienes Cuenta? <a href="login.php" title="Inicia Sesion aca" >Inicia Sesion aca</a></p>
 <?php if ($mensaje): ?>
     <p style="color:green;"><?= $mensaje ?></p>
 <?php endif; ?>

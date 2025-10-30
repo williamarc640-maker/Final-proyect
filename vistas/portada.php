@@ -16,42 +16,33 @@
 <!-- hero section -->
         <section id="home" class="hero">
             <h1>©SummerWooll</h1>
-            <p>lema</p>
+            <p>Nosotros eclipsamos al resto</p>
             <a href="car.php" class="cta-button">¡¡Explora Nuestro Catalogo!!</a>
         </section>
 <!-- about us -->
         <section id="about" class="content-section">
-            <h2>Titulo</h2>
-            <p>informacion</p>
+            <h2>Nuestros principales atributos</h2>
+            <p>Creamos piezas artesanales con hilo y mucha dedicación, combinando tradición, color y creatividad</p>
 <!-- features -->
             <div class="feature-grid">
                 <div class="feature">
                     <i class="fas fa-tshirt"></i>
-                    <h3>caracteristica 1</h3>
-                    <p>informacion</p>
+                    <h3>Diseños personalizados</h3>
+                    <p>Cada figura se adapta a tus gustos: colores, formas y estilos únicos.</p>
                 </div>
 <!-- feature 2 -->
                 <div class="feature">
                     <i class="fas fa-leaf"></i>
-                    <h3>caracteristica 2</h3>
-                    <p>informacion</p>
+                    <h3>Hecho con amor y detalle</h3>
+                    <p>Cada pieza es tejida a mano con paciencia y cuidado en cada punto.</p>
                 </div>
 <!-- feature 3 -->
                 <div class="feature">
                     <i class="fas fa-paint-brush"></i>
-                    <h3>caracteristica 3</h3>
-                    <p>informacion</p>
+                    <h3>Materiales de calidad</h3>
+                    <p>Usamos hilos resistentes y ecológicos que garantizan durabilidad y belleza.</p>
                 </div>
             </div>
-        </section>
-<!-- newsletter -->
-        <section id="newsletter" class="content-section">
-            <h2>Unete a Nuestra comunidad</h2>
-            <p>Mantente actualizado</p>
-            <form id="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Suscribete</button>
-            </form>
         </section>
     </main>
 <!-- footer -->
