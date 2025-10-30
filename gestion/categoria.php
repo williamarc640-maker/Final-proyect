@@ -2,6 +2,8 @@
 require_once 'database/database.php';
 /* clase categoria */
 class Categoria {
+    // Último error interno para operaciones en Categoria
+    private static $ultimoError = '';
     public static function obtenerTodo() {
         $db = Database::conectar();
         $stmt = $db->query("SELECT * FROM categoria");
@@ -29,8 +31,36 @@ class Categoria {
 /*eliminar categoria */
     public static function eliminar($id) {
         $db = Database::conectar();
-        $stmt = $db->prepare("DELETE FROM categoria WHERE categoria_id=?");
-        return $stmt->execute([$id]);
+        try {
+            // Iniciar transacción
+            $db->beginTransaction();
+
+            // Poner a NULL la categoría en productos asociados (permitirá que la sección aparezca vacía)
+            $stmtUpd = $db->prepare("UPDATE producto SET categoria_id = NULL WHERE categoria_id = ?");
+            $stmtUpd->execute([$id]);
+
+            // Eliminar la categoría
+            $stmt = $db->prepare("DELETE FROM categoria WHERE categoria_id=?");
+            $ok = $stmt->execute([$id]);
+
+            if ($ok) {
+                $db->commit();
+                return true;
+            } else {
+                $db->rollBack();
+                self::$ultimoError = 'No se pudo eliminar la categoría por un error desconocido.';
+                return false;
+            }
+        } catch (PDOException $e) {
+            if ($db->inTransaction()) $db->rollBack();
+            self::$ultimoError = $e->getMessage();
+            return false;
+        }
+    }
+
+    // Obtener el último error ocurrido en operaciones de Categoria
+    public static function getUltimoError() {
+        return self::$ultimoError;
     }
 }
 ?>

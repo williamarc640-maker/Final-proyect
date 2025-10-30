@@ -41,7 +41,7 @@ class ProductoControlador {
                 $dato['producto_precio'],
                 $dato['producto_stock'],
                 $foto,
-                $dato['categoria_id'],
+                (!isset($dato['categoria_id']) || $dato['categoria_id'] === '') ? null : $dato['categoria_id'],
                 $_SESSION['id']
             );
         } else {
@@ -51,7 +51,7 @@ class ProductoControlador {
                 $dato['producto_precio'],
                 $dato['producto_stock'],
                 $foto,
-                $dato['categoria_id'],
+                (!isset($dato['categoria_id']) || $dato['categoria_id'] === '') ? null : $dato['categoria_id'],
                 $_SESSION['id']
             );
         }

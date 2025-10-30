@@ -30,7 +30,8 @@
         <img style="display:none;" class="preview-img" id="img-preview">
     <?php endif; ?>
     <label>Categoría:</label>
-    <select name="categoria_id" required>
+    <select name="categoria_id">
+        <option value="">-- Sin categoría --</option>
         <!-- Cargar categorías dinámicamente -->
         <?php foreach ($categorias as $cat): ?>
             <option value="<?= $cat->categoria_id ?>" <?= ($producto && $producto->categoria_id == $cat->categoria_id) ? 'selected' : '' ?>>

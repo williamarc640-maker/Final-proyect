@@ -46,12 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             try {
                 // Configuración del servidor
                 $mail->isSMTP();
-                $mail->Host = 'smtp.gmail.com';
+                $mail->Host = 'HOST'; // Tu servidor SMTP
                 $mail->SMTPAuth = true;
-                $mail->Username = 'summerwoollenterprises@gmail.com';
+                $mail->Username = 'EMAIL'; // Tu email
                 $mail->Password = 'CONTRASEÑA'; // Usa una contraseña de aplicación
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port = 587;
+                $mail->Port = PUERTO; // Puerto SMTP
                 // Configuración del email
                 $mail->setFrom('summerwoollenterprises@gmail.com', 'SummerWooll');
                 $mail->addAddress($email, $nombre);

@@ -143,7 +143,7 @@ CREATE TABLE `producto` (
   `producto_precio` decimal(30,0) NOT NULL,
   `producto_stock` int(25) NOT NULL,
   `producto_foto` varchar(500) NOT NULL,
-  `categoria_id` int(7) NOT NULL,
+  `categoria_id` int(7) DEFAULT NULL,
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -575,7 +575,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`categoria_id`),
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`categoria_id`) ON DELETE SET NULL,
   ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuario_id`);
 
 --

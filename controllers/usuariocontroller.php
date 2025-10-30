@@ -68,7 +68,15 @@ class Controlador {
             header("Location: index.php");
             exit;
         }
-        Usuario::eliminar($id);
+        $ok = Usuario::eliminar($id);
+        if (!$ok) {
+            // Recuperar mensaje de error y redirigir con información
+            $errorMsg = Usuario::getUltimoError() ?: 'No se pudo eliminar el usuario.';
+            // Pasar mensaje por GET (urlencode)
+            $error = urlencode($errorMsg);
+            header("Location: index.php?error={$error}");
+            exit;
+        }
         header("Location: index.php");
         exit;
     }
