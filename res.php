@@ -46,12 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             try {
                 // Configuración del servidor
                 $mail->isSMTP();
-                $mail->Host = 'smtp.gmail.com';
+                $mail->Host = 'HOST';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'summerwoollenterprises@gmail.com';
-                $mail->Password = 'codigo-que-no-se-puede-subir-en-github'; // Usa una contraseña de aplicación
+                $mail->Username = 'EMAIL';
+                $mail->Password = 'CONTRASEÑA'; // Usa una contraseña de aplicación
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port = 587;
+                $mail->Port = PUERTO;
                 // Configuración del email
                 $mail->setFrom('summerwoollenterprises@gmail.com', 'SummerWooll');
                 $mail->addAddress($email, $nombre);

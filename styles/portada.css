@@ -14,7 +14,7 @@ body {
 /* Header Styles */
 .hero {
     height: 100vh;
-    background-image: url('../img/fondo-SW.jpg');
+    background-image: url('./coseee.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
